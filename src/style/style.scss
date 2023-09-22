@@ -1,0 +1,14 @@
+@import './nullstyle.scss';
+@import './variables.scss';
+
+body {
+  background: $backgroundColor;
+}
+
+.wrapper {
+  max-width: 1400px;
+  margin: 50px auto;
+  padding: 15px 10px;
+  height: 100%;
+  background-color: #fff;
+}
