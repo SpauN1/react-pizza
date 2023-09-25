@@ -1,12 +1,15 @@
 @import '../../style/variables.scss';
 
 .header {
+  display: flex;
+  align-items: center;
   border-bottom: 1px solid $grayColor;
   padding-bottom: 40px;
 
   .container {
+    column-gap: 15px;
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     padding: 40px 38px 0px 77px;
   }

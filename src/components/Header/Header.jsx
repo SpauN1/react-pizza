@@ -1,7 +1,9 @@
 import React from 'react';
 
-import logo from '../../assets/img/logo.svg';
 import basket from '../../assets/img/basket.svg';
+import logo from '../../assets/img/logo.svg';
+
+import Search from '../Search/Search';
 
 import './Header.scss';
 
@@ -18,6 +20,7 @@ function Header() {
             </div>
           </div>
         </a>
+        <Search />
         <div className="header__basket">
           <a href="#" className="header__basket-button">
             <span>0 ₽</span>
