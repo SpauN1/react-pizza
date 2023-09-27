@@ -1,0 +1,29 @@
+@import '../../style/variables.scss';
+
+.sort {
+  cursor: pointer;
+
+  &__label {
+    display: flex;
+    align-items: center;
+  }
+  svg {
+    text-align: center;
+    align-items: center;
+    margin-right: 7px;
+  }
+
+  p {
+    display: inline-block;
+    color: $darkGrayColor;
+    margin-right: 8px;
+  }
+
+  span {
+    color: #fe5f1e;
+    border-bottom: 1px dashed #fe5f1e;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.21px;
+  }
+}
