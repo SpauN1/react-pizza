@@ -1,0 +1,42 @@
+@import '../../style//variables.scss';
+
+.categories {
+  margin-bottom: 67px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  ul {
+    display: flex;
+    gap: 8px;
+    margin-right: 10px;
+  }
+
+  li {
+    cursor: pointer;
+    border-radius: 30px;
+    background: $lightGrayColor;
+    color: $blackColor;
+    text-align: center;
+    font-weight: 700;
+    padding: 15px 30px;
+
+    &:hover {
+      color: $whiteColor;
+      background: $grayColor;
+    }
+
+    &:active {
+      color: $whiteColor;
+      background-color: $darkGrayColor;
+    }
+  }
+
+  li.active {
+    color: $whiteColor;
+    background: $darkGrayColor;
+  }
+}
