@@ -20,10 +20,9 @@
   }
 
   span {
-    color: #fe5f1e;
-    border-bottom: 1px dashed #fe5f1e;
+    color: $primaryColor;
+    border-bottom: 1px dashed $primaryColor;
     font-size: 14px;
     font-weight: 400;
-    letter-spacing: 0.21px;
   }
 }

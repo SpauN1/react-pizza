@@ -23,9 +23,9 @@ function Header() {
           </a>
           <Search />
           <div className="header__basket">
-            <a href="#" className="header__basket-button">
+            <a className="button button__header" href="#">
               <span>0 ₽</span>
-              <div className="header__basket-delimiter"></div>
+              <div className="button__header-delimiter"></div>
               <img src={basket} alt="иконка корзины" />
               <span>0</span>
             </a>
