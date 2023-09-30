@@ -5,7 +5,7 @@
   align-items: center;
   border-radius: 30px;
   background: $primaryColor;
-  padding: 15px 23px;
+  padding: 10px 16px;
 
   &__header {
     span {
@@ -27,9 +27,14 @@
   &__pizza {
     border: 1px solid $primaryColor;
     background: #fff;
+
     &-icon {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
       margin-right: 8px;
     }
+
     &-text {
       color: $primaryColor;
       font-size: 16px;
