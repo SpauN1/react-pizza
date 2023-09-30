@@ -1,5 +1,6 @@
 import Header from './Header/Header';
 import Categories from './Categories/Categories';
+import PizzaList from './PizzaList/PizzaList';
 
 import '../style/style.scss';
 
@@ -9,6 +10,7 @@ function App() {
       <div className="wrapper">
         <Header />
         <Categories />
+        <PizzaList />
       </div>
     </div>
   );
