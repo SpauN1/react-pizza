@@ -3,13 +3,15 @@ import React from 'react';
 import cheeseburgerPizza from '../../assets/img/cheeseburger-pizza.svg';
 import plus from '../../assets/img/plus.svg';
 
+import Pagination from '../Pagination/Pagination';
+
 import './PizzaList.scss';
 
 function PizzaList() {
   return (
     <main className="main">
       <div className="container">
-        <div className="content">
+        <section className="content">
           <h2 className="content__title">Все пиццы</h2>
           <div className="pizza">
             <div className="pizza__item">
@@ -169,7 +171,8 @@ function PizzaList() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
+        <Pagination />
       </div>
     </main>
   );
