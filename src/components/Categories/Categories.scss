@@ -18,15 +18,16 @@
   li {
     cursor: pointer;
     border-radius: 30px;
-    background: $lightGrayColor;
+    background-color: $lightGrayColor;
     color: $blackColor;
     text-align: center;
     font-weight: 700;
     padding: 15px 30px;
+    transition: all 0.3s ease;
 
     &:hover {
       color: $whiteColor;
-      background: $grayColor;
+      background-color: $grayColor;
     }
 
     &:active {
@@ -37,6 +38,6 @@
 
   li.active {
     color: $whiteColor;
-    background: $darkGrayColor;
+    background-color: $darkGrayColor;
   }
 }
