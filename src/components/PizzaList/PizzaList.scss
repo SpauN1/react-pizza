@@ -27,6 +27,12 @@
     object-fit: cover;
     margin: 0px auto;
     margin-bottom: 10px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__title {
@@ -43,7 +49,7 @@
     text-align: center;
     padding: 7px 5px;
     border-radius: 10px;
-    background: $lightGrayColor;
+    background-color: $lightGrayColor;
     margin-bottom: 17px;
 
     li {
@@ -81,6 +87,6 @@
 
 .active {
   border-radius: 5px;
-  background: $whiteColor;
+  background-color: $whiteColor;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.04);
 }
