@@ -4,8 +4,9 @@
   display: flex;
   align-items: center;
   border-radius: 30px;
-  background: $primaryColor;
-  padding: 10px 16px;
+  background-color: $primaryColor;
+  padding: 12px 18px;
+  transition: all 0.4s ease;
 
   &__header {
     span {
@@ -20,24 +21,54 @@
       margin: 0px 15px;
       width: 1px;
       height: 25px;
-      background: rgba(255, 255, 255, 0.25);
+      background-color: rgba(255, 255, 255, 0.25);
     }
   }
 
   &__pizza {
     border: 1px solid $primaryColor;
-    background: #fff;
-
-    &-icon {
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      margin-right: 8px;
-    }
+    background-color: $whiteColor;
 
     &-text {
       color: $primaryColor;
       font-size: 16px;
+    }
+
+    &-icon {
+      position: relative;
+      display: inline-block;
+      margin: 0px 12px 0px 5px;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 12px;
+        background-color: $primaryColor;
+        top: 50%;
+        left: 0px;
+        transform: translate(-50%, -50%);
+      }
+      &::before {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+      &::after {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+    }
+
+    &:hover {
+      background-color: $primaryColor;
+
+      .button__pizza-text {
+        color: $whiteColor;
+      }
+
+      .button__pizza-icon::after,
+      .button__pizza-icon::before {
+        background-color: $whiteColor;
+      }
     }
   }
 }

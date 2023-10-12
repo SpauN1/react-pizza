@@ -2,7 +2,7 @@ $whiteColor: #fff;
 $primaryColor: #21722e;
 $darkGrayColor: #2c2c2c;
 $blackColor: #000;
-$primaryHoverColor: #07811b;
+$primaryHoverColor: saturate($primaryColor, 30%);
 $grayColor: #7b7b7b;
 $opacityWhiteColor: rgba(255, 255, 255, 0.5);
 $lightGrayColor: #f5f5f5;
