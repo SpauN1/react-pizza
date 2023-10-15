@@ -19,16 +19,20 @@
       object-fit: contain;
     }
   }
+}
 
-  h1 {
-    color: $blackColor;
-    font-size: 24px;
-    font-weight: 800;
-    text-transform: uppercase;
-  }
+.title {
+  color: $blackColor;
+  font-size: 24px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
 
-  p {
-    color: $grayColor;
-    font-weight: 400;
-  }
+.subtitle {
+  color: $grayColor;
+  font-weight: 400;
+}
+
+.button__header:hover {
+  background-color: $primaryHoverColor;
 }

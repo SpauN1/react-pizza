@@ -16,8 +16,8 @@ function Header() {
             <div className="header__logo">
               <img src={logo} alt="логотип пиццы" />
               <div>
-                <h1>REACT PIZZA</h1>
-                <p>самая вкусная пицца во вселенной</p>
+                <h1 className="title">REACT PIZZA</h1>
+                <p className="subtitle">самая вкусная пицца во вселенной</p>
               </div>
             </div>
           </a>
