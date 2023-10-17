@@ -35,7 +35,7 @@ function PizzaList() {
               <div className="pizza__footer">
                 <span className="pizza__price">от 395 ₽</span>
                 <button className="button button__pizza">
-                  <img className="button__pizza-icon" src={plus} alt="плюс" />
+                  <span className="button__pizza-icon"></span>
                   <span className="button__pizza-text">Добавить</span>
                 </button>
               </div>
@@ -61,7 +61,7 @@ function PizzaList() {
               <div className="pizza__footer">
                 <span className="pizza__price">от 395 ₽</span>
                 <button className="button button__pizza">
-                  <img className="button__pizza-icon" src={plus} alt="плюс" />
+                  <span className="button__pizza-icon"></span>
                   <span className="button__pizza-text">Добавить</span>
                 </button>
               </div>
@@ -87,7 +87,7 @@ function PizzaList() {
               <div className="pizza__footer">
                 <span className="pizza__price">от 395 ₽</span>
                 <button className="button button__pizza">
-                  <img className="button__pizza-icon" src={plus} alt="плюс" />
+                  <span className="button__pizza-icon"></span>
                   <span className="button__pizza-text">Добавить</span>
                 </button>
               </div>
@@ -113,7 +113,7 @@ function PizzaList() {
               <div className="pizza__footer">
                 <span className="pizza__price">от 395 ₽</span>
                 <button className="button button__pizza">
-                  <img className="button__pizza-icon" src={plus} alt="плюс" />
+                  <span className="button__pizza-icon"></span>
                   <span className="button__pizza-text">Добавить</span>
                 </button>
               </div>
@@ -139,7 +139,7 @@ function PizzaList() {
               <div className="pizza__footer">
                 <span className="pizza__price">от 395 ₽</span>
                 <button className="button button__pizza">
-                  <img className="button__pizza-icon" src={plus} alt="плюс" />
+                  <span className="button__pizza-icon"></span>
                   <span className="button__pizza-text">Добавить</span>
                 </button>
               </div>
@@ -165,7 +165,7 @@ function PizzaList() {
               <div className="pizza__footer">
                 <span className="pizza__price">от 395 ₽</span>
                 <button className="button button__pizza">
-                  <img className="button__pizza-icon" src={plus} alt="плюс" />
+                  <span className="button__pizza-icon"></span>
                   <span className="button__pizza-text">Добавить</span>
                 </button>
               </div>
