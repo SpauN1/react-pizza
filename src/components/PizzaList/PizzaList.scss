@@ -1,8 +1,5 @@
 @import '../../style/variables.scss';
 
-.main {
-}
-
 .content {
   margin-bottom: 45px;
 
@@ -12,81 +9,11 @@
     letter-spacing: 0.32px;
     margin-bottom: 35px;
   }
-}
 
-.pizza {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 280px));
-  gap: 55px 25px;
-  justify-content: space-around;
-
-  &__img {
-    display: block;
-    width: 260px;
-    height: 260px;
-    object-fit: cover;
-    margin: 0px auto;
-    margin-bottom: 10px;
-    transition: all 0.2s ease;
-    cursor: pointer;
-
-    &:hover {
-      transform: scale(1.1);
-    }
+  &__product {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 280px));
+    gap: 55px 25px;
+    justify-content: space-around;
   }
-
-  &__title {
-    color: $blackColor;
-    font-size: 20px;
-    font-weight: 800;
-    margin-bottom: 22px;
-    text-align: center;
-  }
-
-  &__params {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 7px 5px;
-    border-radius: 10px;
-    background-color: $lightGrayColor;
-    margin-bottom: 17px;
-
-    li {
-      padding: 12px;
-      width: 100%;
-    }
-  }
-
-  &__dough {
-    display: flex;
-    color: $darkGrayColor;
-    font-size: 14px;
-    margin-bottom: 7px;
-  }
-
-  &__size {
-    display: flex;
-    align-items: center;
-    color: $darkGrayColor;
-    font-size: 14px;
-  }
-
-  &__footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &__price {
-    color: $blackColor;
-    font-size: 22px;
-    letter-spacing: 0.33px;
-  }
-}
-
-.active {
-  border-radius: 5px;
-  background-color: $whiteColor;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.04);
 }

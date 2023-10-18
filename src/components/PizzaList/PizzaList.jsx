@@ -1,9 +1,12 @@
 import React from 'react';
 
+import asianStyleShrimp from '../../assets/img/asian-style-shrimp.svg';
+import cheese from '../../assets/img/cheese.svg';
+import cheeseChicken from '../../assets/img/cheeseChicken.svg';
 import cheeseburgerPizza from '../../assets/img/cheeseburger-pizza.svg';
-import plus from '../../assets/img/plus.svg';
 
 import Pagination from '../Pagination/Pagination';
+import PizzaListItem from '../PizzaListItem/PizzaListItem';
 
 import './PizzaList.scss';
 
@@ -13,163 +16,14 @@ function PizzaList() {
       <div className="container">
         <section className="content">
           <h2 className="content__title">Все пиццы</h2>
-          <div className="pizza">
-            <div className="pizza__item">
-              <img
-                className="pizza__img"
-                src={cheeseburgerPizza}
-                alt="чизбургер-пицца"
-              />
-              <h3 className="pizza__title">Чизбургер-пицца</h3>
-              <div className="pizza__params">
-                <ul className="pizza__dough">
-                  <li className="active">тонкое</li>
-                  <li>традиционное</li>
-                </ul>
-                <ul className="pizza__size">
-                  <li className="active">26 см.</li>
-                  <li>30 см.</li>
-                  <li>40 см.</li>
-                </ul>
-              </div>
-              <div className="pizza__footer">
-                <span className="pizza__price">от 395 ₽</span>
-                <button className="button button__pizza">
-                  <span className="button__pizza-icon"></span>
-                  <span className="button__pizza-text">Добавить</span>
-                </button>
-              </div>
-            </div>
-            <div className="pizza__item">
-              <img
-                className="pizza__img"
-                src={cheeseburgerPizza}
-                alt="чизбургер-пицца"
-              />
-              <h3 className="pizza__title">Чизбургер-пицца</h3>
-              <div className="pizza__params">
-                <ul className="pizza__dough">
-                  <li className="active">тонкое</li>
-                  <li>традиционное</li>
-                </ul>
-                <ul className="pizza__size">
-                  <li className="active">26 см.</li>
-                  <li>30 см.</li>
-                  <li>40 см.</li>
-                </ul>
-              </div>
-              <div className="pizza__footer">
-                <span className="pizza__price">от 395 ₽</span>
-                <button className="button button__pizza">
-                  <span className="button__pizza-icon"></span>
-                  <span className="button__pizza-text">Добавить</span>
-                </button>
-              </div>
-            </div>
-            <div className="pizza__item">
-              <img
-                className="pizza__img"
-                src={cheeseburgerPizza}
-                alt="чизбургер-пицца"
-              />
-              <h3 className="pizza__title">Чизбургер-пицца</h3>
-              <div className="pizza__params">
-                <ul className="pizza__dough">
-                  <li className="active">тонкое</li>
-                  <li>традиционное</li>
-                </ul>
-                <ul className="pizza__size">
-                  <li className="active">26 см.</li>
-                  <li>30 см.</li>
-                  <li>40 см.</li>
-                </ul>
-              </div>
-              <div className="pizza__footer">
-                <span className="pizza__price">от 395 ₽</span>
-                <button className="button button__pizza">
-                  <span className="button__pizza-icon"></span>
-                  <span className="button__pizza-text">Добавить</span>
-                </button>
-              </div>
-            </div>
-            <div className="pizza__item">
-              <img
-                className="pizza__img"
-                src={cheeseburgerPizza}
-                alt="чизбургер-пицца"
-              />
-              <h3 className="pizza__title">Чизбургер-пицца</h3>
-              <div className="pizza__params">
-                <ul className="pizza__dough">
-                  <li className="active">тонкое</li>
-                  <li>традиционное</li>
-                </ul>
-                <ul className="pizza__size">
-                  <li className="active">26 см.</li>
-                  <li>30 см.</li>
-                  <li>40 см.</li>
-                </ul>
-              </div>
-              <div className="pizza__footer">
-                <span className="pizza__price">от 395 ₽</span>
-                <button className="button button__pizza">
-                  <span className="button__pizza-icon"></span>
-                  <span className="button__pizza-text">Добавить</span>
-                </button>
-              </div>
-            </div>
-            <div className="pizza__item">
-              <img
-                className="pizza__img"
-                src={cheeseburgerPizza}
-                alt="чизбургер-пицца"
-              />
-              <h3 className="pizza__title">Чизбургер-пицца</h3>
-              <div className="pizza__params">
-                <ul className="pizza__dough">
-                  <li className="active">тонкое</li>
-                  <li>традиционное</li>
-                </ul>
-                <ul className="pizza__size">
-                  <li className="active">26 см.</li>
-                  <li>30 см.</li>
-                  <li>40 см.</li>
-                </ul>
-              </div>
-              <div className="pizza__footer">
-                <span className="pizza__price">от 395 ₽</span>
-                <button className="button button__pizza">
-                  <span className="button__pizza-icon"></span>
-                  <span className="button__pizza-text">Добавить</span>
-                </button>
-              </div>
-            </div>
-            <div className="pizza__item">
-              <img
-                className="pizza__img"
-                src={cheeseburgerPizza}
-                alt="чизбургер-пицца"
-              />
-              <h3 className="pizza__title">Чизбургер-пицца</h3>
-              <div className="pizza__params">
-                <ul className="pizza__dough">
-                  <li className="active">тонкое</li>
-                  <li>традиционное</li>
-                </ul>
-                <ul className="pizza__size">
-                  <li className="active">26 см.</li>
-                  <li>30 см.</li>
-                  <li>40 см.</li>
-                </ul>
-              </div>
-              <div className="pizza__footer">
-                <span className="pizza__price">от 395 ₽</span>
-                <button className="button button__pizza">
-                  <span className="button__pizza-icon"></span>
-                  <span className="button__pizza-text">Добавить</span>
-                </button>
-              </div>
-            </div>
+          <div className="content__product">
+            <PizzaListItem title="Чизбургер-пицца" price="395" img={cheeseburgerPizza}/>
+            <PizzaListItem title="Сырная" price="450" img={cheese}/>
+            <PizzaListItem title="Креветки по-азиатски" price="290" img={asianStyleShrimp}/>
+            <PizzaListItem title="Сырный цыпленок" price="385" img={cheeseChicken}/>
+            <PizzaListItem title="Сырная" price="450" img={cheese}/>
+            <PizzaListItem title="Креветки по-азиатски" price="290" img={asianStyleShrimp}/>
+            <PizzaListItem title="Сырный цыпленок" price="385" img={cheeseChicken}/>
           </div>
         </section>
         <Pagination />
