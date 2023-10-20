@@ -32,6 +32,7 @@
     &-text {
       color: $primaryColor;
       font-size: 16px;
+      margin-right: 8px;
     }
 
     &-icon {
@@ -70,5 +71,25 @@
         background-color: $whiteColor;
       }
     }
+  }
+
+  &__circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    color: $whiteColor;
+    border-radius: 30px;
+    border: 1px solid $primaryColor;
+    background: $primaryColor;
+    font-weight: 700;
+  }
+
+  &__circle:hover {
+    color: $primaryColor;
+    border-radius: 30px;
+    border: 1px solid $whiteColor;
+    background: $whiteColor;
   }
 }

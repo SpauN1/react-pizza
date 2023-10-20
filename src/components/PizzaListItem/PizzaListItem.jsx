@@ -24,6 +24,7 @@ function PizzaListItem({ title, price, img }) {
           <button className="button button__pizza">
             <span className="button__pizza-icon"></span>
             <span className="button__pizza-text">Добавить</span>
+            <span className="button__circle">1</span>
           </button>
         </div>
       </div>
