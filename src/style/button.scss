@@ -59,7 +59,21 @@
       }
     }
 
+    &-circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      color: $whiteColor;
+      border-radius: 30px;
+      border: 1px solid $primaryColor;
+      background: $primaryColor;
+      font-weight: 700;
+    }
+
     &:hover {
+      transition: all 0.7s ease;
       background-color: $primaryColor;
 
       .button__pizza-text {
@@ -70,26 +84,13 @@
       .button__pizza-icon::before {
         background-color: $whiteColor;
       }
+
+      .button__pizza-circle {
+        color: $primaryColor;
+        border-radius: 30px;
+        border: 1px solid $whiteColor;
+        background: $whiteColor;
+      }
     }
-  }
-
-  &__circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 22px;
-    height: 22px;
-    color: $whiteColor;
-    border-radius: 30px;
-    border: 1px solid $primaryColor;
-    background: $primaryColor;
-    font-weight: 700;
-  }
-
-  &__circle:hover {
-    color: $primaryColor;
-    border-radius: 30px;
-    border: 1px solid $whiteColor;
-    background: $whiteColor;
   }
 }
