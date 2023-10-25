@@ -25,6 +25,10 @@
     }
   }
 
+  &__header:hover {
+    background-color: $primaryHoverColor;
+  }
+
   &__pizza {
     border: 1px solid $primaryColor;
     background-color: $whiteColor;
