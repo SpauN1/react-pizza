@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './PizzaListItem.scss';
 
 function PizzaListItem({ title, price, img }) {
+  const [pizzaCount, setPizzaCount] = useState(0);
+
+  const onClickAdd = () => {
+    setPizzaCount(pizzaCount + 1);
+  };
+
   return (
     <div className="pizza">
       <div className="pizza__item">
@@ -21,10 +27,10 @@ function PizzaListItem({ title, price, img }) {
         </div>
         <div className="pizza__footer">
           <span className="pizza__price">от {price} ₽</span>
-          <button className="button button__pizza">
+          <button onClick={onClickAdd} className="button button__pizza">
             <span className="button__pizza-icon"></span>
             <span className="button__pizza-text">Добавить</span>
-            <span className="button__pizza-circle">1</span>
+            <span className="button__pizza-circle">{pizzaCount}</span>
           </button>
         </div>
       </div>
