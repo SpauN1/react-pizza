@@ -6,20 +6,30 @@ function Pagination() {
   return (
     <section className="pagination">
       <ul className="pagination__list">
-        <li className="previous">
-          <a href="#">&lt;</a>
+        <li className="pagination__list-item ">
+          <a className="pagination__link previous" href="#">
+            &lt;
+          </a>
         </li>
-        <li className="selected">
-          <a href="#">1</a>
+        <li className="pagination__list-item ">
+          <a className="pagination__link selected" href="#">
+            1
+          </a>
         </li>
-        <li>
-          <a href="#">2</a>
+        <li className="pagination__list-item">
+          <a className="pagination__link" href="#">
+            2
+          </a>
         </li>
-        <li>
-          <a href="#">3</a>
+        <li className="pagination__list-item">
+          <a className="pagination__link" href="#">
+            3
+          </a>
         </li>
-        <li className="next">
-          <a href="#">&gt;</a>
+        <li className="pagination__list-item ">
+          <a className="pagination__link next" href="#">
+            &gt;
+          </a>
         </li>
       </ul>
     </section>
