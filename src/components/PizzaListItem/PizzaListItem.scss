@@ -1,6 +1,12 @@
 @import '../../style/variables.scss';
 
 .pizza {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
   &__img {
     display: block;
     width: 260px;
@@ -17,6 +23,7 @@
   }
 
   &__title {
+    flex: 1 1 auto;
     color: $blackColor;
     font-size: 20px;
     font-weight: 800;
