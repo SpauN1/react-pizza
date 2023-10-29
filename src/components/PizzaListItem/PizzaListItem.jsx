@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 
 import './PizzaListItem.scss';
 
-function PizzaListItem({ title, price, imageUrl }) {
+function PizzaListItem({ title, price, imageUrl, types }) {
   const [pizzaCount, setPizzaCount] = useState(0);
+  const [activeDough, setActiveDough] = useState(types[0]);
+
+  const typeDough = ['тонкое', 'традиционное'];
 
   const onClickAdd = () => {
     setPizzaCount(pizzaCount + 1);
@@ -16,8 +19,14 @@ function PizzaListItem({ title, price, imageUrl }) {
         <h3 className="pizza__title">{title}</h3>
         <div className="pizza__params">
           <ul className="pizza__dough">
-            <li className="pizza__params-active">тонкое</li>
-            <li>традиционное</li>
+            {types.map((typeId) => (
+              <li
+                onClick={() => setActiveDough(typeId)}
+                className={activeDough === typeId ? 'pizza__params-active' : ''}
+              >
+                {typeDough[typeId]}
+              </li>
+            ))}
           </ul>
           <ul className="pizza__size">
             <li className="pizza__params-active">26 см.</li>

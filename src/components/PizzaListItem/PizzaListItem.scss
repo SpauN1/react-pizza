@@ -41,6 +41,8 @@
     margin-bottom: 17px;
 
     li {
+      cursor: pointer;
+      transition: all 0.3s linear;
       padding: 12px;
       width: 100%;
     }
