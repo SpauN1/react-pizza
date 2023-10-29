@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import './PizzaListItem.scss';
 
-function PizzaListItem({ title, price, img }) {
+function PizzaListItem({ title, price, imageUrl }) {
   const [pizzaCount, setPizzaCount] = useState(0);
 
   const onClickAdd = () => {
@@ -12,7 +12,7 @@ function PizzaListItem({ title, price, img }) {
   return (
     <div className="pizza">
       <div className="pizza__item">
-        <img className="pizza__img" src={img} alt="картинка пиццы" />
+        <img className="pizza__img" src={imageUrl} alt="картинка пиццы" />
         <h3 className="pizza__title">{title}</h3>
         <div className="pizza__params">
           <ul className="pizza__dough">
