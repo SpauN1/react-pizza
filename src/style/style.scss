@@ -24,3 +24,12 @@ body {
   margin: 0 auto;
   width: 92.5%;
 }
+
+@keyframes popupAnimation {
+  from {
+    top: -300%;
+  }
+  to {
+    top: 26px;
+  }
+}
