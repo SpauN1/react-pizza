@@ -9,30 +9,30 @@
     justify-content: space-between;
   }
 
-  ul {
+  &__item {
     display: flex;
     gap: 8px;
     margin-right: 10px;
-  }
 
-  li {
-    cursor: pointer;
-    border-radius: 30px;
-    background-color: $lightGrayColor;
-    color: $blackColor;
-    text-align: center;
-    font-weight: 700;
-    padding: 15px 30px;
-    transition: all 0.3s ease-in;
+    li {
+      cursor: pointer;
+      border-radius: 30px;
+      background-color: $lightGrayColor;
+      color: $blackColor;
+      text-align: center;
+      font-weight: 700;
+      padding: 15px 30px;
+      transition: all 0.3s ease-in;
 
-    &:hover {
-      color: $whiteColor;
-      background-color: $grayColor;
+      &:hover {
+        color: $whiteColor;
+        background-color: $grayColor;
+      }
     }
-  }
 
-  li.active {
-    color: $whiteColor;
-    background-color: $darkGrayColor;
+    li.active {
+      color: $whiteColor;
+      background-color: $darkGrayColor;
+    }
   }
 }

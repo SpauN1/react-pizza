@@ -24,7 +24,7 @@ function Categories() {
     <nav className="categories">
       <div className="container">
         <div className="categories__content">
-          <ul>
+          <ul className="categories__item">
             {categories.map((element, index) => (
               <li
                 key={index}
