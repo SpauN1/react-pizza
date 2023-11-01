@@ -14,7 +14,7 @@ function PizzaList() {
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__product">
             {pizzas.map((obj) => (
-              <PizzaListItem {...obj} />
+              <PizzaListItem key={obj.id} {...obj} />
             ))}
           </div>
         </section>

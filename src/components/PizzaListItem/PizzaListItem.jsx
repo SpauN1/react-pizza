@@ -22,6 +22,7 @@ function PizzaListItem({ title, price, imageUrl, types, sizes }) {
           <ul className="pizza__dough">
             {types.map((typeId) => (
               <li
+                key={typeId}
                 onClick={() => setActiveDough(typeId)}
                 className={activeDough === typeId ? 'pizza__params-active' : ''}
               >
@@ -32,6 +33,7 @@ function PizzaListItem({ title, price, imageUrl, types, sizes }) {
           <ul className="pizza__size">
             {sizes.map((size, i) => (
               <li
+                key={i}
                 onClick={() => setActiveSize(i)}
                 className={activeSize === i ? 'pizza__params-active' : ''}
               >
