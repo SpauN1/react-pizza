@@ -28,8 +28,10 @@ body {
 @keyframes popupAnimation {
   from {
     top: -300%;
+    opacity: 0;
   }
   to {
     top: 26px;
+    opacity: 1;
   }
 }

@@ -37,12 +37,19 @@
     border-radius: 10px;
     font-size: 14px;
     font-weight: 400;
-    text-align: center;
-    animation: popupAnimation 0.5s forwards;
+    animation: popupAnimation 0.4s forwards;
 
     li {
-      padding: 10px 0px;
-      margin: 10px 0px;
+      transition: all 0.2s linear;
+      padding: 10px 0px 10px 14px;
+    }
+
+    li:first-child {
+      margin-top: 10px;
+    }
+
+    li:last-child {
+      margin-bottom: 10px;
     }
 
     li:hover {
