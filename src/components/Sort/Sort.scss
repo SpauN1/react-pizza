@@ -1,6 +1,7 @@
 @import '../../style/variables.scss';
 
 .sort {
+  position: relative;
   cursor: pointer;
 
   &__label {
@@ -24,5 +25,34 @@
     border-bottom: 1px dashed $primaryColor;
     font-size: 14px;
     font-weight: 400;
+  }
+
+  &__popup {
+    position: absolute;
+    left: 114px;
+    z-index: 5;
+    background-color: $whiteColor;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
+    width: 132px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+
+    li {
+      padding: 10px 0px;
+      margin: 10px 0px;
+    }
+
+    li:hover {
+      background: rgba(30, 254, 41, 0.05);
+    }
+
+    &-active {
+      color: $primaryColor;
+      background: rgba(30, 254, 41, 0.05);
+      font-style: normal;
+      font-weight: 700;
+    }
   }
 }

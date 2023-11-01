@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './Sort.scss';
 
 function Sort() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [activeList, setActiveList] = useState(0);
+
+  const list = ['популярности', 'по цене', 'по алфавиту'];
+
   return (
     <div className="sort">
-      <div className="sort__label">
+      <div onClick={() => setIsVisible(!isVisible)} className="sort__label">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="10"
@@ -21,6 +26,21 @@ function Sort() {
         <p>Сортировка по:</p>
         <span>популярности</span>
       </div>
+      {isVisible && (
+        <div className="sort__popup">
+          <ul>
+            {list.map((name, i) => (
+              <li
+                onClick={() => setActiveList(i)}
+                key={i}
+                className={activeList === i ? 'sort__popup-active' : ''}
+              >
+                {name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
