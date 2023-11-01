@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 
 import './PizzaListItem.scss';
 
-function PizzaListItem({ title, price, imageUrl, types }) {
+function PizzaListItem({ title, price, imageUrl, types, sizes }) {
   const [pizzaCount, setPizzaCount] = useState(0);
   const [activeDough, setActiveDough] = useState(types[0]);
+  const [activeSize, setActiveSize] = useState(0);
 
   const typeDough = ['тонкое', 'традиционное'];
 
@@ -29,9 +30,14 @@ function PizzaListItem({ title, price, imageUrl, types }) {
             ))}
           </ul>
           <ul className="pizza__size">
-            <li className="pizza__params-active">26 см.</li>
-            <li>30 см.</li>
-            <li>40 см.</li>
+            {sizes.map((size, i) => (
+              <li
+                onClick={() => setActiveSize(i)}
+                className={activeSize === i ? 'pizza__params-active' : ''}
+              >
+                {`${size} см.`}
+              </li>
+            ))}
           </ul>
         </div>
         <div className="pizza__footer">
