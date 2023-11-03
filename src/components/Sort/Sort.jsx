@@ -3,14 +3,21 @@ import React, { useState } from 'react';
 import './Sort.scss';
 
 function Sort() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [openPopup, setOpenPopup] = useState(false);
   const [activeList, setActiveList] = useState(0);
 
   const list = ['популярности', 'по цене', 'по алфавиту'];
 
+  const sortName = list[activeList];
+
+  const onClickListItem = (i) => {
+    setActiveList(i);
+    setOpenPopup(false);
+  };
+
   return (
     <div className="sort">
-      <div onClick={() => setIsVisible(!isVisible)} className="sort__label">
+      <div onClick={() => setOpenPopup(!openPopup)} className="sort__label">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="10"
@@ -24,14 +31,14 @@ function Sort() {
           />
         </svg>
         <p>Сортировка по:</p>
-        <span>популярности</span>
+        <span onClick={() => setOpenPopup(!openPopup)}>{sortName}</span>
       </div>
-      {isVisible && (
+      {openPopup && (
         <div className="sort__popup">
           <ul>
             {list.map((name, i) => (
               <li
-                onClick={() => setActiveList(i)}
+                onClick={() => onClickListItem(i)}
                 key={i}
                 className={activeList === i ? 'sort__popup-active' : ''}
               >
