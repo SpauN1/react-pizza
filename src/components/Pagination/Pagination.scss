@@ -2,13 +2,13 @@
 
 .pagination {
   margin-left: 12px;
-  padding-bottom: 50px;
+  margin-bottom: 25px;
 
   &__list {
     display: flex;
     column-gap: 10px;
   }
-  
+
   &__list-item {
     display: flex;
     align-items: center;

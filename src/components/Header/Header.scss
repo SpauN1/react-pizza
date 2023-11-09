@@ -1,9 +1,8 @@
 @import '../../style/variables.scss';
 
 .header {
-  padding: 40px 0px;
-  margin-bottom: 80px;
-  display: flex;
+  padding: 40px 60px;
+  margin-bottom: 10px;
   border-bottom: 1px solid $grayColor;
 
   &__content {

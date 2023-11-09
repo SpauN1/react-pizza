@@ -10,26 +10,24 @@ import './Header.scss';
 function Header() {
   return (
     <header className="header">
-      <div className="container">
-        <div className="header__content">
-          <a href="#">
-            <div className="header__logo">
-              <img src={logo} alt="логотип пиццы" />
-              <div>
-                <h1 className="title">REACT PIZZA</h1>
-                <p className="subtitle">самая вкусная пицца во вселенной</p>
-              </div>
+      <div className="header__content">
+        <a href="#">
+          <div className="header__logo">
+            <img src={logo} alt="логотип пиццы" />
+            <div>
+              <h1 className="title">REACT PIZZA</h1>
+              <p className="subtitle">самая вкусная пицца во вселенной</p>
             </div>
-          </a>
-          <Search />
-          <div className="header__basket">
-            <a className="button button__header" href="#">
-              <span>0 ₽</span>
-              <div className="button__header-delimiter"></div>
-              <img src={basket} alt="иконка корзины" />
-              <span>0</span>
-            </a>
           </div>
+        </a>
+        <Search />
+        <div className="header__basket">
+          <a className="button button__header" href="#">
+            <span>0 ₽</span>
+            <div className="button__header-delimiter"></div>
+            <img src={basket} alt="иконка корзины" />
+            <span>0</span>
+          </a>
         </div>
       </div>
     </header>

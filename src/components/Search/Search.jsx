@@ -1,8 +1,8 @@
+import React from 'react';
+
 import search from '../../assets/img/search.svg';
 
 import './Search.scss';
-
-import React from 'react';
 
 function Search() {
   return (

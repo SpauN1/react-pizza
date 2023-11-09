@@ -7,14 +7,12 @@ import CartEmpty from './CartEmpty/CartEmpty';
 
 function App() {
   return (
-    <div className="app">
-      <div className="wrapper">
-        <Header />
-        <div className="content">
-          <Categories />
-          <PizzaList />
-          {/* <CartEmpty /> */}
-        </div>
+    <div className="wrapper">
+      <Header />
+      <div className="content">
+        {/* <Categories />
+        <PizzaList /> */}
+        <CartEmpty />
       </div>
     </div>
   );

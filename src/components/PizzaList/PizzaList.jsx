@@ -21,17 +21,13 @@ function PizzaList() {
 
   return (
     <main className="main">
-      <div className="container">
-        <section className="content">
-          <h2 className="content__title">Все пиццы</h2>
-          <div className="content__product">
-            {isLoading
-              ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
-              : items.map((obj) => <PizzaListItem key={obj.id} {...obj} />)}
-          </div>
-        </section>
-        <Pagination />
+      <h2 className="main__title">Все пиццы</h2>
+      <div className="main__product">
+        {isLoading
+          ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
+          : items.map((obj) => <PizzaListItem key={obj.id} {...obj} />)}
       </div>
+      <Pagination />
     </main>
   );
 }

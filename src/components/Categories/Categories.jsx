@@ -22,21 +22,19 @@ function Categories() {
 
   return (
     <nav className="categories">
-      <div className="container">
-        <div className="categories__content">
-          <ul className="categories__item">
-            {categories.map((element, index) => (
-              <li
-                key={index}
-                onClick={() => onClickCategory(index)}
-                className={activeIndex === index ? 'active' : ''}
-              >
-                {element}
-              </li>
-            ))}
-          </ul>
-          <Sort />
-        </div>
+      <div className="categories__content">
+        <ul className="categories__item">
+          {categories.map((element, index) => (
+            <li
+              key={index}
+              onClick={() => onClickCategory(index)}
+              className={activeIndex === index ? 'active' : ''}
+            >
+              {element}
+            </li>
+          ))}
+        </ul>
+        <Sort />
       </div>
     </nav>
   );

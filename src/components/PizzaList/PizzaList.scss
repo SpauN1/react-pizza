@@ -1,8 +1,6 @@
 @import '../../style/variables.scss';
 
-.content {
-  margin-bottom: 45px;
-
+.main {
   &__title {
     color: $blackColor;
     font-size: 32px;
@@ -15,5 +13,6 @@
     grid-template-columns: repeat(auto-fill, minmax(170px, 280px));
     gap: 55px 25px;
     justify-content: space-around;
+    margin-bottom: 50px;
   }
 }
