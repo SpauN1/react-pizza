@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import cartEmptyImg from '../../assets/img/cart-empty.svg';
 
@@ -12,13 +13,14 @@ function CartEmpty() {
           Корзина пустая <span>😕</span>
         </h2>
         <p className="cart-empty__text">
-          Вероятней всего, вы не заказывали ещё пиццу. Для того, чтобы заказать
-          пиццу, перейди на главную страницу.
+          Вероятней всего, вы не заказывали ещё пиццу. <br />
+          Для того, чтобы заказать пиццу, перейди на главную страницу.
         </p>
         <img src={cartEmptyImg} alt="корзина" className="cart-empty__img"></img>
-        <button className="button button__cart-empty">
+
+        <Link to="/" className="button button__cart-empty">
           <span>Вернуться назад</span>
-        </button>
+        </Link>
       </div>
     </div>
   );

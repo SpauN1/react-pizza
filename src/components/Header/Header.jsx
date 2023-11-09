@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import basket from '../../assets/img/basket.svg';
 import logo from '../../assets/img/logo.svg';
@@ -11,7 +12,7 @@ function Header() {
   return (
     <header className="header">
       <div className="header__content">
-        <a href="#">
+        <Link to="/">
           <div className="header__logo">
             <img src={logo} alt="логотип пиццы" />
             <div>
@@ -19,15 +20,15 @@ function Header() {
               <p className="subtitle">самая вкусная пицца во вселенной</p>
             </div>
           </div>
-        </a>
+        </Link>
         <Search />
         <div className="header__basket">
-          <a className="button button__header" href="#">
+          <Link to="/cart" className="button button__header" href="#">
             <span>0 ₽</span>
             <div className="button__header-delimiter"></div>
             <img src={basket} alt="иконка корзины" />
             <span>0</span>
-          </a>
+          </Link>
         </div>
       </div>
     </header>
