@@ -101,12 +101,13 @@
 
   &__cart-empty {
     background: $darkGrayColor;
-    padding: 16px 50px;
     margin: 0px auto;
+    width: 215px;
+    height: 47px;
 
     span {
+      margin: 0px auto;
       color: $whiteColor;
-      text-align: center;
       font-style: normal;
       letter-spacing: 0.24px;
     }
