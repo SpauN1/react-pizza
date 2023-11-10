@@ -112,4 +112,68 @@
       letter-spacing: 0.24px;
     }
   }
+
+  &__cart-circle {
+    width: 32px;
+    height: 32px;
+    background-color: $whiteColor;
+    border-radius: 30px;
+    border: 1px solid $primaryColor;
+    font-size: 22px;
+    transition: all 0.3s ease;
+  }
+
+  &-count-minus {
+    span {
+      display: inline-block;
+      margin-bottom: 2px;
+    }
+  }
+
+  &-count-plus {
+    span {
+      display: inline-block;
+      margin-top: 2px;
+    }
+  }
+
+  &-remove {
+    color: $grayColor;
+    border-color: $grayColor;
+
+    span {
+      display: inline-block;
+      margin-top: 2px;
+    }
+  }
+
+  &-go-back {
+    padding: 18px 40px 18px 0px;
+    border: 1px solid $grayColor;
+    background: $whiteColor;
+
+    span {
+      color: $grayColor;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    svg {
+      margin-left: 30px;
+      margin-right: 10px;
+    }
+  }
+
+  &-pay {
+    display: flex;
+    justify-content: center;
+    width: 215px;
+    border: 1px solid $grayColor;
+    background: $primaryColor;
+
+    span {
+      color: $whiteColor;
+      font-size: 16px;
+    }
+  }
 }
