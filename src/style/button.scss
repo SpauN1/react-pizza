@@ -104,12 +104,17 @@
     margin: 0px auto;
     width: 215px;
     height: 47px;
+    transition: 0.3s ease-in-out;
 
     span {
       margin: 0px auto;
       color: $whiteColor;
       font-style: normal;
       letter-spacing: 0.24px;
+    }
+
+    &:hover {
+      background: $blackColor;
     }
   }
 
@@ -121,6 +126,14 @@
     border: 1px solid $primaryColor;
     font-size: 22px;
     transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $primaryColor;
+
+      span {
+        color: $whiteColor;
+      }
+    }
   }
 
   &-count-minus {
@@ -145,12 +158,21 @@
       display: inline-block;
       margin-top: 2px;
     }
+
+    &:hover {
+      background-color: $blackColor;
+
+      span {
+        color: $whiteColor;
+      }
+    }
   }
 
   &-go-back {
     padding: 18px 40px 18px 0px;
     border: 1px solid $grayColor;
     background: $whiteColor;
+    transition: all 0.3s linear;
 
     span {
       color: $grayColor;
@@ -162,6 +184,20 @@
       margin-left: 30px;
       margin-right: 10px;
     }
+
+    &:hover {
+      background: $blackColor;
+
+      span {
+        color: $whiteColor;
+      }
+
+      svg {
+        path {
+          stroke: $whiteColor;
+        }
+      }
+    }
   }
 
   &-pay {
@@ -170,10 +206,15 @@
     width: 215px;
     border: 1px solid $grayColor;
     background: $primaryColor;
+    transition: all 0.3s linear;
 
     span {
       color: $whiteColor;
       font-size: 16px;
+    }
+
+    &:hover {
+      background-color: $primaryHoverColor;
     }
   }
 }

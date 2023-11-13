@@ -13,21 +13,32 @@
 
   &__logo {
     display: flex;
+    transition: 0.3s ease-in-out;
+
     img {
       margin-right: 17px;
       object-fit: contain;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      transform: scale(0.9);
+
+      img {
+        transform: rotate(90deg);
+      }
     }
   }
-}
 
-.title {
-  color: $blackColor;
-  font-size: 24px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
+  &__title {
+    color: $blackColor;
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
 
-.subtitle {
-  color: $grayColor;
-  font-weight: 400;
+  &__subtitle {
+    color: $grayColor;
+    font-weight: 400;
+  }
 }
