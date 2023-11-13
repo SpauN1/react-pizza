@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import basket from '../../assets/img/basket.svg';
-import logo from '../../assets/img/logo.svg';
+import basketWhite from '../../assets/img/basket-white.svg';
+import logo from '../../assets/img/logo.jpg';
 
 import Search from '../Search/Search';
 
@@ -16,8 +16,10 @@ function Header() {
           <div className="header__logo">
             <img src={logo} alt="логотип пиццы" />
             <div>
-              <h1 className="title">REACT PIZZA</h1>
-              <p className="subtitle">самая вкусная пицца во вселенной</p>
+              <h1 className="header__title">REACT PIZZA</h1>
+              <p className="header__subtitle">
+                самая вкусная пицца во вселенной
+              </p>
             </div>
           </div>
         </Link>
@@ -26,7 +28,7 @@ function Header() {
           <Link to="/cart" className="button button__header" href="#">
             <span>0 ₽</span>
             <div className="button__header-delimiter"></div>
-            <img src={basket} alt="иконка корзины" />
+            <img src={basketWhite} alt="иконка корзины" />
             <span>0</span>
           </Link>
         </div>
