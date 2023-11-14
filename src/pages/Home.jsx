@@ -10,9 +10,9 @@ function Home() {
     <>
       <Categories
         activeCategory={activeCategory}
-        setActiveCategory={(i) => setActiveCategory(i)}
+        onChangeCategory={(i) => setActiveCategory(i)}
       />
-      <PizzaList activeCategory={activeCategory}/>
+      <PizzaList activeCategory={activeCategory} />
     </>
   );
 }

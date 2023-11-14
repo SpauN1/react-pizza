@@ -5,7 +5,7 @@ import Sort from '../Sort/Sort';
 import './Categories.scss';
 
 function Categories(props) {
-  const { activeCategory, setActiveCategory } = props;
+  const { activeCategory, onChangeCategory } = props;
 
   const categories = [
     'Все',
@@ -23,7 +23,7 @@ function Categories(props) {
           {categories.map((categoryName, i) => (
             <li
               key={i}
-              onClick={() => setActiveCategory(i)}
+              onClick={() => onChangeCategory(i)}
               className={activeCategory === i ? 'active' : ''}
             >
               {categoryName}
