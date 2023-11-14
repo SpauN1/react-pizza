@@ -6,18 +6,21 @@ import Skeleton from '../Skeleton/Skeleton';
 
 import './PizzaList.scss';
 
-function PizzaList() {
+function PizzaList({ activeCategory }) {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://65468388fe036a2fa955ca61.mockapi.io/items')
+    const category = activeCategory > 0 ? `category=${activeCategory}` : '';
+
+    setIsLoading(true);
+    fetch(`https://65468388fe036a2fa955ca61.mockapi.io/items?${category}`)
       .then((response) => response.json())
       .then((data) => {
         setItems(data);
         setIsLoading(false);
       });
-  }, []);
+  }, [activeCategory]);
 
   return (
     <main className="main">

@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Sort from '../Sort/Sort';
 
 import './Categories.scss';
 
-function Categories() {
+function Categories(props) {
+  const { activeCategory, setActiveCategory } = props;
+
   const categories = [
     'Все',
     'Мясные',
@@ -14,23 +16,17 @@ function Categories() {
     'Закрытые',
   ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const onClickCategory = (index) => {
-    setActiveIndex(index);
-  };
-
   return (
     <nav className="categories">
       <div className="categories__content">
         <ul className="categories__item">
-          {categories.map((element, index) => (
+          {categories.map((categoryName, i) => (
             <li
-              key={index}
-              onClick={() => onClickCategory(index)}
-              className={activeIndex === index ? 'active' : ''}
+              key={i}
+              onClick={() => setActiveCategory(i)}
+              className={activeCategory === i ? 'active' : ''}
             >
-              {element}
+              {categoryName}
             </li>
           ))}
         </ul>
