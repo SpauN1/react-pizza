@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import basketBlack from '../../assets/img/basket-black.svg';
 
@@ -68,7 +69,7 @@ function Cart() {
             </p>
           </div>
           <div className="cart__bottom-buttons">
-            <button className="button button-go-back">
+            <Link to="/" className="button button-go-back">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="8"
@@ -85,7 +86,7 @@ function Cart() {
                 />
               </svg>
               <span>Вернуться назад</span>
-            </button>
+            </Link>
             <button className="button button-pay">
               <span>Оплатить сейчас</span>
             </button>
