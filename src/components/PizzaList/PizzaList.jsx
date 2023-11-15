@@ -14,31 +14,24 @@ function PizzaList({ activeCategory, sortType, searchValue }) {
     const category = activeCategory > 0 ? `category=${activeCategory}` : '';
     const sortBy = sortType.sortProperty.replace('-', '');
     const order = sortType.sortProperty.includes('-') ? 'asc' : 'desc';
+    const search = searchValue ? `search=${searchValue}` : '';
+    const url = `https://65468388fe036a2fa955ca61.mockapi.io/items?${category}&sortBy=${sortBy}&order=${order}&${search}`;
 
     setIsLoading(true);
-    fetch(
-      `https://65468388fe036a2fa955ca61.mockapi.io/items?${category}&sortBy=${sortBy}&order=${order}`
-    )
+
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
         setItems(data);
         setIsLoading(false);
       });
-  }, [activeCategory, sortType]);
+  }, [activeCategory, sortType, searchValue]);
 
   const skeleton = [...new Array(6)].map((_, index) => (
     <Skeleton key={index} />
   ));
 
-  const pizzas = items
-    .filter((obj) => {
-      if (obj.title.toLowerCase().includes(searchValue.toLowerCase())) {
-        return true;
-      }
-
-      return false;
-    })
-    .map((obj) => <PizzaListItem key={obj.id} {...obj} />);
+  const pizzas = items.map((obj) => <PizzaListItem key={obj.id} {...obj} />);
 
   return (
     <main className="main">
