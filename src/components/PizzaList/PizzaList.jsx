@@ -6,7 +6,7 @@ import Skeleton from '../Skeleton/Skeleton';
 
 import './PizzaList.scss';
 
-function PizzaList({ activeCategory, sortType }) {
+function PizzaList({ activeCategory, sortType, searchValue }) {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -26,14 +26,24 @@ function PizzaList({ activeCategory, sortType }) {
       });
   }, [activeCategory, sortType]);
 
+  const skeleton = [...new Array(6)].map((_, index) => (
+    <Skeleton key={index} />
+  ));
+
+  const pizzas = items
+    .filter((obj) => {
+      if (obj.title.toLowerCase().includes(searchValue.toLowerCase())) {
+        return true;
+      }
+
+      return false;
+    })
+    .map((obj) => <PizzaListItem key={obj.id} {...obj} />);
+
   return (
     <main className="main">
       <h2 className="main__title">Все пиццы</h2>
-      <div className="main__product">
-        {isLoading
-          ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
-          : items.map((obj) => <PizzaListItem key={obj.id} {...obj} />)}
-      </div>
+      <div className="main__product">{isLoading ? skeleton : pizzas}</div>
       <Pagination />
     </main>
   );
