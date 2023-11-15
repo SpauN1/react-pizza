@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-import Pagination from '../Pagination/Pagination';
 import PizzaListItem from '../PizzaListItem/PizzaListItem';
 import Skeleton from '../Skeleton/Skeleton';
 
@@ -37,7 +36,6 @@ function PizzaList({ activeCategory, sortType, searchValue }) {
     <main className="main">
       <h2 className="main__title">Все пиццы</h2>
       <div className="main__product">{isLoading ? skeleton : pizzas}</div>
-      <Pagination />
     </main>
   );
 }

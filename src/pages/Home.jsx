@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Categories from '../components/Categories/Categories';
 import PizzaList from '../components/PizzaList/PizzaList';
+import Pagination from '../components/Pagination/Pagination';
 
 function Home({ searchValue }) {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -23,6 +24,7 @@ function Home({ searchValue }) {
         activeCategory={activeCategory}
         sortType={sortType}
       />
+      <Pagination />
     </>
   );
 }
