@@ -8,7 +8,7 @@ import Search from '../Search/Search';
 
 import './Header.scss';
 
-function Header() {
+function Header({ searchValue, setSearchValue }) {
   return (
     <header className="header">
       <div className="header__content">
@@ -23,7 +23,7 @@ function Header() {
             </div>
           </div>
         </Link>
-        <Search />
+        <Search searchValue={searchValue} setSearchValue={setSearchValue} />
         <div className="header__basket">
           <Link to="/cart" className="button button__header" href="#">
             <span>0 ₽</span>

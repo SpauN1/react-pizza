@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './Header/Header';
@@ -11,10 +11,12 @@ import NotFound from '../pages/NotFound';
 import '../style/style.scss';
 
 function App() {
+  const [searchValue, setSearchValue] = useState('');
+
   return (
     <BrowserRouter>
       <div className="wrapper">
-        <Header />
+        <Header searchValue={searchValue} setSearchValue={setSearchValue} />
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
