@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import PizzaListItem from '../PizzaListItem/PizzaListItem';
 import Skeleton from '../Skeleton/Skeleton';
+import { SearchContext, SortContext } from '../../context/context';
 
 import './PizzaList.scss';
 
-function PizzaList({ activeCategory, sortType, searchValue, currentPage }) {
+function PizzaList({ activeCategory, currentPage }) {
+  const { searchValue } = useContext(SearchContext);
+  const { sortType } = useContext(SortContext);
+
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 

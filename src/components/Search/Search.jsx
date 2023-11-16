@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import search from '../../assets/img/search.svg';
 import clearIcon from '../../assets/img/clear-icon.svg';
 
+import { SearchContext } from '../../context/context';
+
 import './Search.scss';
 
-function Search({ searchValue, setSearchValue }) {
+function Search() {
+  const { searchValue, setSearchValue } = useContext(SearchContext);
+
   return (
     <div className="search">
       <img src={search} alt="поиск пиццы" className="search__icon" />

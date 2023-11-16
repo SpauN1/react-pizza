@@ -4,9 +4,7 @@ import Sort from '../Sort/Sort';
 
 import './Categories.scss';
 
-function Categories(props) {
-  const { activeCategory, onChangeCategory, sortType, onChangeSort } = props;
-
+function Categories({ activeCategory, onChangeCategory }) {
   const categories = [
     'Все',
     'Мясные',
@@ -30,7 +28,7 @@ function Categories(props) {
             </li>
           ))}
         </ul>
-        <Sort sortType={sortType} onChangeSort={onChangeSort} />
+        <Sort />
       </div>
     </nav>
   );

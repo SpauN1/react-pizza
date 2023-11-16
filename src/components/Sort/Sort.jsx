@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+
+import { SortContext } from '../../context/context';
 
 import './Sort.scss';
 
-function Sort({ sortType, onChangeSort }) {
+function Sort() {
+  const { sortType, setSortType } = useContext(SortContext);
+
   const [openPopup, setOpenPopup] = useState(false);
 
   const list = [
@@ -15,7 +19,7 @@ function Sort({ sortType, onChangeSort }) {
   ];
 
   const onClickListItem = (i) => {
-    onChangeSort(i);
+    setSortType(i);
     setOpenPopup(false);
   };
 
