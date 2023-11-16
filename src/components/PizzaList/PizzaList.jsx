@@ -5,7 +5,7 @@ import Skeleton from '../Skeleton/Skeleton';
 
 import './PizzaList.scss';
 
-function PizzaList({ activeCategory, sortType, searchValue }) {
+function PizzaList({ activeCategory, sortType, searchValue, currentPage }) {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -14,7 +14,7 @@ function PizzaList({ activeCategory, sortType, searchValue }) {
     const sortBy = sortType.sortProperty.replace('-', '');
     const order = sortType.sortProperty.includes('-') ? 'asc' : 'desc';
     const search = searchValue ? `search=${searchValue}` : '';
-    const url = `https://65468388fe036a2fa955ca61.mockapi.io/items?${category}&sortBy=${sortBy}&order=${order}&${search}`;
+    const url = `https://65468388fe036a2fa955ca61.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortBy}&order=${order}&${search}`;
 
     setIsLoading(true);
 
@@ -24,9 +24,9 @@ function PizzaList({ activeCategory, sortType, searchValue }) {
         setItems(data);
         setIsLoading(false);
       });
-  }, [activeCategory, sortType, searchValue]);
+  }, [activeCategory, sortType, searchValue, currentPage]);
 
-  const skeleton = [...new Array(6)].map((_, index) => (
+  const skeleton = [...new Array(4)].map((_, index) => (
     <Skeleton key={index} />
   ));
 

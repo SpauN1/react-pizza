@@ -10,6 +10,7 @@ function Home({ searchValue }) {
     name: 'популярности',
     sortProperty: 'rating',
   });
+  const [currentPage, setCurrentPage] = useState(1);
 
   return (
     <>
@@ -20,11 +21,12 @@ function Home({ searchValue }) {
         onChangeSort={(i) => setSortType(i)}
       />
       <PizzaList
+        currentPage={currentPage}
         searchValue={searchValue}
         activeCategory={activeCategory}
         sortType={sortType}
       />
-      <Pagination />
+      <Pagination onChangePage={(number) => setCurrentPage(number)} />
     </>
   );
 }
