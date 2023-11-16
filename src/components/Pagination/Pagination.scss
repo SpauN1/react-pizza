@@ -4,17 +4,20 @@
   margin-left: 12px;
   margin-bottom: 25px;
 
-  &__list {
-    display: flex;
-    column-gap: 10px;
-  }
-
-  &__list-item {
+  ul {
     display: flex;
     align-items: center;
+    column-gap: 10px;
+
+    .selected {
+      color: $whiteColor;
+      background-color: $primaryColor;
+    }
   }
 
-  &__link {
+  li {
+    width: 33px;
+    height: 43px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,22 +25,22 @@
     font-size: 18px;
     border: 1px solid $primaryColor;
     color: $primaryColor;
-    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+
+    a {
+      padding: 10px;
+    }
+
+    &:hover {
+      color: $whiteColor;
+      background-color: $primaryHoverColor;
+    }
   }
 
-  &__link:hover {
-    transition: all 0.6s ease;
-    color: $whiteColor;
-    background-color: $primaryHoverColor;
+  li:first-child,
+  li:last-child {
+    width: 30px;
+    height: 37px;
   }
-}
-
-.previous,
-.next {
-  font-size: 14px;
-}
-
-.selected {
-  color: $whiteColor;
-  background-color: $primaryColor;
 }

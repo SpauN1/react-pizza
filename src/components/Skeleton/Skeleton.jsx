@@ -6,7 +6,7 @@ function Skeleton() {
     <ContentLoader
       speed={2}
       width={280}
-      height={500}
+      height={484}
       viewBox="0 0 280 500"
       backgroundColor="#f3f3f3"
       foregroundColor="#ecebeb"
