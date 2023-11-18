@@ -4,7 +4,7 @@ import Sort from '../Sort/Sort';
 
 import './Categories.scss';
 
-function Categories({ activeCategory, onChangeCategory }) {
+function Categories({ categoryId, onChangeCategory }) {
   const categories = [
     'Все',
     'Мясные',
@@ -22,7 +22,7 @@ function Categories({ activeCategory, onChangeCategory }) {
             <li
               key={i}
               onClick={() => onChangeCategory(i)}
-              className={activeCategory === i ? 'active' : ''}
+              className={categoryId === i ? 'active' : ''}
             >
               {categoryName}
             </li>

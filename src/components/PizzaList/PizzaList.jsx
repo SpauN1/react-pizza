@@ -6,7 +6,7 @@ import { SearchContext, SortContext } from '../../context/context';
 
 import './PizzaList.scss';
 
-function PizzaList({ activeCategory, currentPage }) {
+function PizzaList({ categoryId, currentPage }) {
   const { searchValue } = useContext(SearchContext);
   const { sortType } = useContext(SortContext);
 
@@ -14,7 +14,7 @@ function PizzaList({ activeCategory, currentPage }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const category = activeCategory > 0 ? `category=${activeCategory}` : '';
+    const category = categoryId > 0 ? `category=${categoryId}` : '';
     const sortBy = sortType.sortProperty.replace('-', '');
     const order = sortType.sortProperty.includes('-') ? 'asc' : 'desc';
     const search = searchValue ? `search=${searchValue}` : '';
@@ -28,7 +28,7 @@ function PizzaList({ activeCategory, currentPage }) {
         setItems(data);
         setIsLoading(false);
       });
-  }, [activeCategory, sortType, searchValue, currentPage]);
+  }, [categoryId, sortType, searchValue, currentPage]);
 
   const skeleton = [...new Array(4)].map((_, index) => (
     <Skeleton key={index} />

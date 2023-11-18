@@ -1,26 +1,34 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Categories from '../components/Categories/Categories';
 import PizzaList from '../components/PizzaList/PizzaList';
 import Pagination from '../components/Pagination/Pagination';
 import { SortContext } from '../context/context';
+import { setCategoryId } from '../redux/slices/filterSlice';
 
 function Home() {
-  const [activeCategory, setActiveCategory] = useState(0);
+  const categoryId = useSelector((state) => state.filterSlice.categoryId);
+  const dispatch = useDispatch();
+
   const [sortType, setSortType] = useState({
     name: 'популярности',
     sortProperty: 'rating',
   });
   const [currentPage, setCurrentPage] = useState(1);
 
+  const onChangeCategory = (id) => {
+    dispatch(setCategoryId(id));
+  };
+
   return (
     <>
       <SortContext.Provider value={{ sortType, setSortType }}>
         <Categories
-          activeCategory={activeCategory}
-          onChangeCategory={(i) => setActiveCategory(i)}
+          categoryId={categoryId}
+          onChangeCategory={onChangeCategory}
         />
-        <PizzaList currentPage={currentPage} activeCategory={activeCategory} />
+        <PizzaList currentPage={currentPage} categoryId={categoryId} />
         <Pagination onChangePage={(number) => setCurrentPage(number)} />
       </SortContext.Provider>
     </>
