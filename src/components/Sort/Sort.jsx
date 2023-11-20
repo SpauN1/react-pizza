@@ -1,25 +1,27 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { SortContext } from '../../context/context';
+import { setSortType } from '../../redux/slices/filterSlice';
 
 import './Sort.scss';
 
+const list = [
+  { name: 'популярности (DESC)', sortProperty: 'rating' },
+  { name: 'популярности (ASC)', sortProperty: '-rating' },
+  { name: 'по цене (DESC)', sortProperty: 'price' },
+  { name: 'по цене (ASC)', sortProperty: '-price' },
+  { name: 'по алфавиту (DESC)', sortProperty: 'title' },
+  { name: 'по алфавиту (ASC)', sortProperty: '-title' },
+];
+
 function Sort() {
-  const { sortType, setSortType } = useContext(SortContext);
+  const dispatch = useDispatch();
+  const sort = useSelector((state) => state.filterSlice.sort);
 
   const [openPopup, setOpenPopup] = useState(false);
 
-  const list = [
-    { name: 'популярности (DESC)', sortProperty: 'rating' },
-    { name: 'популярности (ASC)', sortProperty: '-rating' },
-    { name: 'по цене (DESC)', sortProperty: 'price' },
-    { name: 'по цене (ASC)', sortProperty: '-price' },
-    { name: 'по алфавиту (DESC)', sortProperty: 'title' },
-    { name: 'по алфавиту (ASC)', sortProperty: '-title' },
-  ];
-
-  const onClickListItem = (i) => {
-    setSortType(i);
+  const onClickListItem = (obj) => {
+    dispatch(setSortType(obj));
     setOpenPopup(false);
   };
 
@@ -39,7 +41,7 @@ function Sort() {
           />
         </svg>
         <p>Сортировка по:</p>
-        <span onClick={() => setOpenPopup(!openPopup)}>{sortType.name}</span>
+        <span onClick={() => setOpenPopup(!openPopup)}>{sort.name}</span>
       </div>
       {openPopup && (
         <div className="sort__popup">
@@ -49,7 +51,7 @@ function Sort() {
                 onClick={() => onClickListItem(obj)}
                 key={i}
                 className={
-                  sortType.sortProperty === obj.sortProperty
+                  sort.sortProperty === obj.sortProperty
                     ? 'sort__popup-active'
                     : ''
                 }
