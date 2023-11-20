@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Sort from '../Sort/Sort';
-
 import './Categories.scss';
 
 function Categories({ categoryId, onChangeCategory }) {
@@ -16,20 +14,17 @@ function Categories({ categoryId, onChangeCategory }) {
 
   return (
     <nav className="categories">
-      <div className="categories__content">
-        <ul className="categories__item">
-          {categories.map((categoryName, i) => (
-            <li
-              key={i}
-              onClick={() => onChangeCategory(i)}
-              className={categoryId === i ? 'active' : ''}
-            >
-              {categoryName}
-            </li>
-          ))}
-        </ul>
-        <Sort />
-      </div>
+      <ul className="categories__item">
+        {categories.map((categoryName, i) => (
+          <li
+            key={i}
+            onClick={() => onChangeCategory(i)}
+            className={categoryId === i ? 'active' : ''}
+          >
+            {categoryName}
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 }

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Categories from '../components/Categories/Categories';
 import PizzaList from '../components/PizzaList/PizzaList';
 import Pagination from '../components/Pagination/Pagination';
+import Sort from '../components/Sort/Sort';
 import { SortContext } from '../context/context';
 import { setCategoryId } from '../redux/slices/filterSlice';
 
@@ -24,10 +25,14 @@ function Home() {
   return (
     <>
       <SortContext.Provider value={{ sortType, setSortType }}>
-        <Categories
-          categoryId={categoryId}
-          onChangeCategory={onChangeCategory}
-        />
+        <div className="content__top">
+          <Categories
+            categoryId={categoryId}
+            onChangeCategory={onChangeCategory}
+          />
+          <Sort />
+        </div>
+
         <PizzaList currentPage={currentPage} categoryId={categoryId} />
         <Pagination onChangePage={(number) => setCurrentPage(number)} />
       </SortContext.Provider>

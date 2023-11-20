@@ -25,6 +25,13 @@ body {
   width: 92.2%;
   margin: 0 auto;
   padding: 40px 0px;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+  }
 }
 
 @keyframes popupAnimation {

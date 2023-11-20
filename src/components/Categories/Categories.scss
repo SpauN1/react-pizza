@@ -1,14 +1,6 @@
 @import '../../style//variables.scss';
 
 .categories {
-  margin-bottom: 35px;
-
-  &__content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
   &__item {
     display: flex;
     gap: 8px;
