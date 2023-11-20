@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import axios from 'axios';
 
 import PizzaListItem from '../PizzaListItem/PizzaListItem';
 import Skeleton from '../Skeleton/Skeleton';
@@ -24,12 +25,10 @@ function PizzaList({ categoryId, currentPage }) {
 
     setIsLoading(true);
 
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setItems(data);
-        setIsLoading(false);
-      });
+    axios.get(url).then((res) => {
+      setItems(res.data);
+      setIsLoading(false);
+    });
   }, [categoryId, sortType, searchValue, currentPage]);
 
   const skeleton = [...new Array(4)].map((_, index) => (
