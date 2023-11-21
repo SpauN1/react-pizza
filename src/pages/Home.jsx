@@ -5,16 +5,18 @@ import Categories from '../components/Categories/Categories';
 import PizzaList from '../components/PizzaList/PizzaList';
 import Pagination from '../components/Pagination/Pagination';
 import Sort from '../components/Sort/Sort';
-import { setCategoryId } from '../redux/slices/filterSlice';
+import { setCategoryId, setCurrentPage } from '../redux/slices/filterSlice';
 
 function Home() {
   const dispatch = useDispatch();
-  const categoryId = useSelector((state) => state.filterSlice.categoryId);
-
-  const [currentPage, setCurrentPage] = useState(1);
+  const { categoryId, currentPage } = useSelector((state) => state.filterSlice);
 
   const onChangeCategory = (id) => {
     dispatch(setCategoryId(id));
+  };
+
+  const onChangePage = (number) => {
+    dispatch(setCurrentPage(number));
   };
 
   return (
@@ -27,7 +29,7 @@ function Home() {
         <Sort />
       </div>
       <PizzaList currentPage={currentPage} categoryId={categoryId} />
-      <Pagination onChangePage={(number) => setCurrentPage(number)} />
+      <Pagination currentPage={currentPage} onChangePage={onChangePage} />
     </>
   );
 }
