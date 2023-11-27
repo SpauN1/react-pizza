@@ -51,6 +51,7 @@ function PizzaList({ categoryId, currentPage }) {
 
       navigate(`?${queryString}`);
     }
+
     isMounted.current = true;
     // eslint-disable-next-line
   }, [categoryId, sort.sortProperty, currentPage]);
@@ -70,6 +71,7 @@ function PizzaList({ categoryId, currentPage }) {
           sort,
         })
       );
+
       isSearch.current = true;
     }
     // eslint-disable-next-line
