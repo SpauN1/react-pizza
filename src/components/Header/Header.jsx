@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import basketWhite from '../../assets/img/basket-white.svg';
 import logo from '../../assets/img/logo.jpg';
@@ -9,6 +10,8 @@ import Search from '../Search/Search';
 import './Header.scss';
 
 function Header() {
+  const { totalPrice, items } = useSelector((state) => state.cartSlice);
+
   return (
     <header className="header">
       <div className="header__content">
@@ -26,10 +29,10 @@ function Header() {
         <Search />
         <div className="header__basket">
           <Link to="/cart" className="button button__header" href="#">
-            <span>0 ₽</span>
+            <span>{totalPrice} ₽</span>
             <div className="button__header-delimiter"></div>
             <img src={basketWhite} alt="иконка корзины" />
-            <span>0</span>
+            <span>{items.length}</span>
           </Link>
         </div>
       </div>
