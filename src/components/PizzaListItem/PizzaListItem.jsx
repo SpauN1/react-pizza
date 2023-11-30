@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { addItems } from '../../redux/slices/cartSlice';
+import { addItem } from '../../redux/slices/cartSlice';
 
 import './PizzaListItem.scss';
 
@@ -27,7 +27,7 @@ function PizzaListItem({ title, price, imageUrl, types, sizes, id }) {
       dough: typeDough[activeDough],
       size: activeSize,
     };
-    dispatch(addItems(item));
+    dispatch(addItem(item));
   };
 
   return (
