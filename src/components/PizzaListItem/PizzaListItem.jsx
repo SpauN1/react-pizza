@@ -25,7 +25,7 @@ function PizzaListItem({ title, price, imageUrl, types, sizes, id }) {
       price,
       imageUrl,
       dough: typeDough[activeDough],
-      size: activeSize,
+      size: sizes[activeSize],
     };
     dispatch(addItem(item));
   };
