@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import basketBlack from '../../assets/img/basket-black.svg';
 
 import CartItem from '../../components/CartItem/CartItem';
+import CartEmpty from '../../components/CartEmpty/CartEmpty';
+
 import { clearItems } from '../../redux/slices/cartSlice';
 
 import './Cart.scss';
@@ -18,6 +20,10 @@ function Cart() {
   const onClickClear = () => {
     dispatch(clearItems());
   };
+
+  if (!totalPrice) {
+    return <CartEmpty />;
+  }
 
   return (
     <section className="cart">
