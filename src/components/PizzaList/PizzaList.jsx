@@ -25,19 +25,24 @@ function PizzaList({ categoryId, currentPage }) {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const fetchPizzas = () => {
+  const fetchPizzas = async () => {
+    setIsLoading(true);
+
     const category = categoryId > 0 ? `category=${categoryId}` : '';
     const sortBy = sort.sortProperty.replace('-', '');
     const order = sort.sortProperty.includes('-') ? 'asc' : 'desc';
     const search = searchValue ? `search=${searchValue}` : '';
     const url = `https://65468388fe036a2fa955ca61.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortBy}&order=${order}&${search}`;
 
-    setIsLoading(true);
-
-    axios.get(url).then((res) => {
+    try {
+      const res = await axios.get(url);
       setItems(res.data);
+    } catch (error) {
+      console.log('ERROR', error);
+      alert('Ошибка при получении пицц');
+    } finally {
       setIsLoading(false);
-    });
+    }
   };
 
   // Если изменили параметры и был первый рендер
