@@ -9,11 +9,13 @@ import Skeleton from '../Skeleton/Skeleton';
 import { SearchContext } from '../../context/context';
 import { sortList } from '../Sort/Sort';
 import { setFilters } from '../../redux/slices/filterSlice';
+import { setItems } from '../../redux/slices/pizzaSlice';
 
 import './PizzaList.scss';
 
 function PizzaList({ categoryId, currentPage }) {
   const { sort } = useSelector((state) => state.filterSlice);
+  const items = useSelector((state) => state.pizzaSlice.items);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -22,7 +24,6 @@ function PizzaList({ categoryId, currentPage }) {
 
   const { searchValue } = useContext(SearchContext);
 
-  const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchPizzas = async () => {
@@ -35,8 +36,8 @@ function PizzaList({ categoryId, currentPage }) {
     const url = `https://65468388fe036a2fa955ca61.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortBy}&order=${order}&${search}`;
 
     try {
-      const res = await axios.get(url);
-      setItems(res.data);
+      const { data } = await axios.get(url);
+      dispatch(setItems(data));
     } catch (error) {
       console.log('ERROR', error);
       alert('Ошибка при получении пицц');
