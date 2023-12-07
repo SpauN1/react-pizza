@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
 import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,13 +8,13 @@ import Skeleton from '../Skeleton/Skeleton';
 import { SearchContext } from '../../context/context';
 import { sortList } from '../Sort/Sort';
 import { setFilters } from '../../redux/slices/filterSlice';
-import { setItems } from '../../redux/slices/pizzaSlice';
+import { fetchPizzas } from '../../redux/slices/pizzaSlice';
 
 import './PizzaList.scss';
 
 function PizzaList({ categoryId, currentPage }) {
   const { sort } = useSelector((state) => state.filterSlice);
-  const items = useSelector((state) => state.pizzaSlice.items);
+  const { items, status } = useSelector((state) => state.pizzaSlice);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -24,26 +23,21 @@ function PizzaList({ categoryId, currentPage }) {
 
   const { searchValue } = useContext(SearchContext);
 
-  const [isLoading, setIsLoading] = useState(true);
-
-  const fetchPizzas = async () => {
-    setIsLoading(true);
-
+  const getPizzas = async () => {
     const category = categoryId > 0 ? `category=${categoryId}` : '';
     const sortBy = sort.sortProperty.replace('-', '');
     const order = sort.sortProperty.includes('-') ? 'asc' : 'desc';
     const search = searchValue ? `search=${searchValue}` : '';
-    const url = `https://65468388fe036a2fa955ca61.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortBy}&order=${order}&${search}`;
 
-    try {
-      const { data } = await axios.get(url);
-      dispatch(setItems(data));
-    } catch (error) {
-      console.log('ERROR', error);
-      alert('Ошибка при получении пицц');
-    } finally {
-      setIsLoading(false);
-    }
+    dispatch(
+      fetchPizzas({
+        category,
+        sortBy,
+        order,
+        search,
+        currentPage,
+      })
+    );
   };
 
   // Если изменили параметры и был первый рендер
@@ -87,9 +81,7 @@ function PizzaList({ categoryId, currentPage }) {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    if (!isSearch.current) {
-      fetchPizzas();
-    }
+    getPizzas();
 
     isSearch.current = false;
     // eslint-disable-next-line
@@ -104,7 +96,16 @@ function PizzaList({ categoryId, currentPage }) {
   return (
     <main className="main">
       <h2 className="main__title">Все пиццы</h2>
-      <div className="main__product">{isLoading ? skeleton : pizzas}</div>
+      {status === 'error' ? (
+        <div className="main__error-info">
+          <h2>Произошла ошибка 😕</h2>
+          <p>Не удалось получить пиццы, попробуйте позже.</p>
+        </div>
+      ) : (
+        <div className="main__product">
+          {status === 'loading' ? skeleton : pizzas}
+        </div>
+      )}
     </main>
   );
 }
