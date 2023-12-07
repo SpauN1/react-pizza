@@ -15,4 +15,18 @@
     justify-content: space-around;
     margin-bottom: 50px;
   }
+
+  &__error-info {
+    margin: 90px auto;
+    text-align: center;
+    width: 500px;
+
+    h2 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
 }
