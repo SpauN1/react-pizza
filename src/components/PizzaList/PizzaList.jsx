@@ -1,11 +1,10 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
 
 import PizzaListItem from '../PizzaListItem/PizzaListItem';
 import Skeleton from '../Skeleton/Skeleton';
-import { SearchContext } from '../../context/context';
 import { sortList } from '../Sort/Sort';
 import { setFilters } from '../../redux/slices/filterSlice';
 import { fetchPizzas } from '../../redux/slices/pizzaSlice';
@@ -13,7 +12,7 @@ import { fetchPizzas } from '../../redux/slices/pizzaSlice';
 import './PizzaList.scss';
 
 function PizzaList({ categoryId, currentPage }) {
-  const { sort } = useSelector((state) => state.filterSlice);
+  const { sort, searchValue } = useSelector((state) => state.filterSlice);
   const { items, status } = useSelector((state) => state.pizzaSlice);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -21,7 +20,6 @@ function PizzaList({ categoryId, currentPage }) {
   const isSearch = useRef(false);
   const isMounted = useRef(false);
 
-  const { searchValue } = useContext(SearchContext);
 
   const getPizzas = async () => {
     const category = categoryId > 0 ? `category=${categoryId}` : '';

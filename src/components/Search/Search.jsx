@@ -1,21 +1,21 @@
-import React, { useCallback, useContext, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import debounce from 'lodash.debounce';
+import { useDispatch } from 'react-redux';
 
 import search from '../../assets/img/search.svg';
 import clearIcon from '../../assets/img/clear-icon.svg';
 
-import { SearchContext } from '../../context/context';
+import { setSearchValue } from '../../redux/slices/filterSlice';
 
 import './Search.scss';
-import { useRef } from 'react';
 
 function Search() {
+  const dispatch = useDispatch();
   const [value, setValue] = useState();
-  const { setSearchValue } = useContext(SearchContext);
   const inputRef = useRef();
 
   const onClickClear = () => {
-    setSearchValue('');
+    dispatch(setSearchValue(''))
     setValue('');
     inputRef.current.focus();
   };
@@ -23,7 +23,7 @@ function Search() {
   //eslint-disable-next-line
   const updateSearchValue = useCallback(
     debounce((string) => {
-      setSearchValue(string);
+      dispatch(setSearchValue(string));
     }, 250),
 
     []
