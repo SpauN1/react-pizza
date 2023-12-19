@@ -12,6 +12,8 @@ import './Header.scss';
 function Header() {
   const { totalPrice, items } = useSelector((state) => state.cartSlice);
 
+  const totalCount = items.reduce((sum, item) => sum + item.count, 0);
+
   return (
     <header className="header">
       <div className="header__content">
@@ -32,7 +34,7 @@ function Header() {
             <span>{totalPrice} ₽</span>
             <div className="button__header-delimiter"></div>
             <img src={basketWhite} alt="иконка корзины" />
-            <span>{items.length}</span>
+            <span>{totalCount}</span>
           </Link>
         </div>
       </div>
