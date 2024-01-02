@@ -5,11 +5,15 @@ import Categories from '../components/Categories/Categories';
 import PizzaList from '../components/PizzaList/PizzaList';
 import Pagination from '../components/Pagination/Pagination';
 import Sort from '../components/Sort/Sort';
-import { setCategoryId, setCurrentPage } from '../redux/slices/filterSlice';
+import {
+  selectFilter,
+  setCategoryId,
+  setCurrentPage,
+} from '../redux/slices/filterSlice';
 
 function Home() {
   const dispatch = useDispatch();
-  const { categoryId, currentPage } = useSelector((state) => state.filterSlice);
+  const { categoryId, currentPage } = useSelector(selectFilter);
 
   const onChangeCategory = (id) => {
     dispatch(setCategoryId(id));

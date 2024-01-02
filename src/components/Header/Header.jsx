@@ -5,12 +5,13 @@ import { useSelector } from 'react-redux';
 import basketWhite from '../../assets/img/basket-white.svg';
 import logo from '../../assets/img/logo.jpg';
 
+import { selectCart } from '../../redux/slices/cartSlice';
 import Search from '../Search/Search';
 
 import './Header.scss';
 
 function Header() {
-  const { totalPrice, items } = useSelector((state) => state.cartSlice);
+  const { totalPrice, items } = useSelector(selectCart);
 
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
 

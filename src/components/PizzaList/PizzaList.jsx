@@ -6,20 +6,19 @@ import { useNavigate } from 'react-router-dom';
 import PizzaListItem from '../PizzaListItem/PizzaListItem';
 import Skeleton from '../Skeleton/Skeleton';
 import { sortList } from '../Sort/Sort';
-import { setFilters } from '../../redux/slices/filterSlice';
-import { fetchPizzas } from '../../redux/slices/pizzaSlice';
+import { selectFilter, setFilters } from '../../redux/slices/filterSlice';
+import { fetchPizzas, selectPizzaData } from '../../redux/slices/pizzaSlice';
 
 import './PizzaList.scss';
 
 function PizzaList({ categoryId, currentPage }) {
-  const { sort, searchValue } = useSelector((state) => state.filterSlice);
-  const { items, status } = useSelector((state) => state.pizzaSlice);
+  const { sort, searchValue } = useSelector(selectFilter);
+  const { items, status } = useSelector(selectPizzaData);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const isSearch = useRef(false);
   const isMounted = useRef(false);
-
 
   const getPizzas = async () => {
     const category = categoryId > 0 ? `category=${categoryId}` : '';
