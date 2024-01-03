@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import qs from 'qs';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import PizzaListItem from '../PizzaListItem/PizzaListItem';
 import Skeleton from '../Skeleton/Skeleton';
@@ -88,7 +88,11 @@ function PizzaList({ categoryId, currentPage }) {
     <Skeleton key={index} />
   ));
 
-  const pizzas = items.map((obj) => <PizzaListItem key={obj.id} {...obj} />);
+  const pizzas = items.map((obj) => (
+    <Link to={`/pizza/${obj.id}`} key={obj.id}>
+      <PizzaListItem {...obj} />
+    </Link>
+  ));
 
   return (
     <main className="main">
