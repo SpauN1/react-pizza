@@ -137,6 +137,25 @@
     }
   }
 
+  &__full-pizza {
+    background: $darkGrayColor;
+    width: 80%;
+    margin: 0px auto;
+    height: 47px;
+    transition: 0.3s ease-in-out;
+
+    span {
+      margin: 0px auto;
+      color: $whiteColor;
+      font-style: normal;
+      letter-spacing: 0.24px;
+    }
+
+    &:hover {
+      background: $blackColor;
+    }
+  }
+
   &-count-minus {
     span {
       display: inline-block;
