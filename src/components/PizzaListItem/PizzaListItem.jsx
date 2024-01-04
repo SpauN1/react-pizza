@@ -10,7 +10,7 @@ const typeDough = ['тонкое', 'традиционное'];
 
 function PizzaListItem({ title, price, imageUrl, types, sizes, id }) {
   const dispatch = useDispatch();
-  const cartItem = useSelector(selectCartItemByID);
+  const cartItem = useSelector(selectCartItemByID(id));
 
   const [activeDough, setActiveDough] = useState(types[0]);
   const [activeSize, setActiveSize] = useState(0);
