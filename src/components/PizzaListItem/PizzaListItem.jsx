@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { addItem, selectCartItemByID } from '../../redux/slices/cartSlice';
 
 import './PizzaListItem.scss';
-import { Link } from 'react-router-dom';
 
 const typeDough = ['тонкое', 'традиционное'];
 
