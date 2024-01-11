@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 
 import './FullPizza.scss';
 
-function FullPizza() {
+export const FullPizza = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [pizza, setPizza] = useState();
@@ -44,6 +44,4 @@ function FullPizza() {
       </div>
     </div>
   );
-}
-
-export default FullPizza;
+};

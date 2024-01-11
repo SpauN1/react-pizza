@@ -1,17 +1,17 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Categories from '../components/Categories/Categories';
-import PizzaList from '../components/PizzaList/PizzaList';
-import Pagination from '../components/Pagination/Pagination';
-import Sort from '../components/Sort/Sort';
+import Categories from '../../components/Categories/Categories';
+import PizzaList from '../../components/PizzaList/PizzaList';
+import Pagination from '../../components/Pagination/Pagination';
+import Sort from '../../components/Sort/Sort';
 import {
   selectFilter,
   setCategoryId,
   setCurrentPage,
-} from '../redux/slices/filterSlice';
+} from '../../redux/slices/filterSlice';
 
-function Home() {
+export const Home = () => {
   const dispatch = useDispatch();
   const { categoryId, currentPage } = useSelector(selectFilter);
 
@@ -36,6 +36,4 @@ function Home() {
       <Pagination currentPage={currentPage} onChangePage={onChangePage} />
     </>
   );
-}
-
-export default Home;
+};

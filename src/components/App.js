@@ -1,12 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Home from '../pages/Home';
-import Cart from '../pages/Cart/Cart';
 import CartEmpty from './CartEmpty/CartEmpty';
-import NotFound from '../pages/NotFound';
-import FullPizza from '../pages/FullPizza/FullPizza';
 import MainLayout from '../layouts/MainLayout';
+import { Cart, FullPizza, Home, NotFound } from '../pages';
 
 import '../style/style.scss';
 
