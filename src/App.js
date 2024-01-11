@@ -1,11 +1,11 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import CartEmpty from './CartEmpty/CartEmpty';
-import MainLayout from '../layouts/MainLayout';
-import { Cart, FullPizza, Home, NotFound } from '../pages';
+import { CartEmpty } from "./components";
+import MainLayout from './layouts/MainLayout';
+import { Cart, FullPizza, Home, NotFound } from './pages';
 
-import '../style/style.scss';
+import '../src/style/style.scss';
 
 function App() {
   return (

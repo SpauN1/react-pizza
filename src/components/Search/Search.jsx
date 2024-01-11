@@ -9,7 +9,7 @@ import { setSearchValue } from '../../redux/slices/filterSlice';
 
 import './Search.scss';
 
-function Search() {
+export const Search = () => {
   const dispatch = useDispatch();
   const [value, setValue] = useState();
   const inputRef = useRef();
@@ -55,6 +55,4 @@ function Search() {
       )}
     </div>
   );
-}
-
-export default Search;
+};

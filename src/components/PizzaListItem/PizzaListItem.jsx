@@ -8,7 +8,7 @@ import './PizzaListItem.scss';
 
 const typeDough = ['тонкое', 'традиционное'];
 
-function PizzaListItem({ title, price, imageUrl, types, sizes, id }) {
+export const PizzaListItem = ({ title, price, imageUrl, types, sizes, id }) => {
   const dispatch = useDispatch();
   const cartItem = useSelector(selectCartItemByID(id));
 
@@ -73,6 +73,4 @@ function PizzaListItem({ title, price, imageUrl, types, sizes, id }) {
       </div>
     </div>
   );
-}
-
-export default PizzaListItem;
+};

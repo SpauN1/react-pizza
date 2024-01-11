@@ -5,7 +5,7 @@ import cartEmptyImg from '../../assets/img/cart-empty.svg';
 
 import './CartEmpty.scss';
 
-function CartEmpty() {
+export const CartEmpty = () => {
   return (
     <div className="cart-empty">
       <div className="cart-empty__body">
@@ -24,6 +24,4 @@ function CartEmpty() {
       </div>
     </div>
   );
-}
-
-export default CartEmpty;
+};

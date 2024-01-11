@@ -1,12 +1,10 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
 
 import basketBlack from '../../assets/img/basket-black.svg';
 
-import CartItem from '../../components/CartItem/CartItem';
-import CartEmpty from '../../components/CartEmpty/CartEmpty';
-
+import { CartEmpty, CartItem } from '../../components';
 import { clearItems, selectCart } from '../../redux/slices/cartSlice';
 
 import './Cart.scss';

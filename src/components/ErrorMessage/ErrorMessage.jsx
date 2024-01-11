@@ -2,7 +2,7 @@ import React from 'react';
 
 import img from '../../assets/error.gif';
 
-function ErrorMessage() {
+export const ErrorMessage = () => {
   return (
     <div style={{ padding: '100px' }}>
       <h2
@@ -24,6 +24,4 @@ function ErrorMessage() {
       />
     </div>
   );
-}
-
-export default ErrorMessage;
+};

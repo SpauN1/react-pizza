@@ -1,16 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import basketWhite from '../../assets/img/basket-white.svg';
 import logo from '../../assets/img/logo.jpg';
 
 import { selectCart } from '../../redux/slices/cartSlice';
-import Search from '../Search/Search';
+import { Search } from "../Search/Search";
 
 import './Header.scss';
 
-function Header() {
+export const Header = () => {
   const { totalPrice, items } = useSelector(selectCart);
 
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
@@ -41,6 +41,4 @@ function Header() {
       </div>
     </header>
   );
-}
-
-export default Header;
+};

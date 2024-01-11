@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Categories.scss';
 
-function Categories({ categoryId, onChangeCategory }) {
+export const Categories = ({ categoryId, onChangeCategory }) => {
   const categories = [
     'Все',
     'Мясные',
@@ -27,6 +27,4 @@ function Categories({ categoryId, onChangeCategory }) {
       </ul>
     </nav>
   );
-}
-
-export default Categories;
+};

@@ -3,15 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
 
-import PizzaListItem from '../PizzaListItem/PizzaListItem';
-import Skeleton from '../Skeleton/Skeleton';
-import { sortList } from '../Sort/Sort';
+import { PizzaListItem, Skeleton, sortList } from '../index';
 import { selectFilter, setFilters } from '../../redux/slices/filterSlice';
 import { fetchPizzas, selectPizzaData } from '../../redux/slices/pizzaSlice';
 
 import './PizzaList.scss';
 
-function PizzaList({ categoryId, currentPage }) {
+export const PizzaList = ({ categoryId, currentPage }) => {
   const { sort, searchValue } = useSelector(selectFilter);
   const { items, status } = useSelector(selectPizzaData);
   const dispatch = useDispatch();
@@ -105,6 +103,4 @@ function PizzaList({ categoryId, currentPage }) {
       )}
     </main>
   );
-}
-
-export default PizzaList;
+};

@@ -1,10 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Categories from '../../components/Categories/Categories';
-import PizzaList from '../../components/PizzaList/PizzaList';
-import Pagination from '../../components/Pagination/Pagination';
-import Sort from '../../components/Sort/Sort';
+import { Categories, Pagination, PizzaList, Sort } from '../../components';
 import {
   selectFilter,
   setCategoryId,

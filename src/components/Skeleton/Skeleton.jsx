@@ -1,7 +1,7 @@
 import React from 'react';
 import ContentLoader from 'react-content-loader';
 
-function Skeleton() {
+export const Skeleton = () => {
   return (
     <ContentLoader
       speed={2}
@@ -18,6 +18,4 @@ function Skeleton() {
       <rect x="125" y="427" rx="24" ry="24" width="152" height="45" />
     </ContentLoader>
   );
-}
-
-export default Skeleton;
+};
