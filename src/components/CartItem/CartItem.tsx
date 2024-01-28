@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
-
-import './CartItem.scss';
 
 import { addItem, minusItem, removeItem } from '../../redux/slices/cartSlice';
 
-export const CartItem = (props) => {
+import './CartItem.scss';
+
+interface CartItemProps {
+  id: string;
+  title: string;
+  price: number;
+  count: number;
+  size: number;
+  dough: string;
+  imageUrl: string;
+}
+
+export const CartItem: FC<CartItemProps> = (props) => {
   const { id, title, price, count, size, dough, imageUrl } = props;
+
   const dispatch = useDispatch();
 
   const onClickPlus = () => {

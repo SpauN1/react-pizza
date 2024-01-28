@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { FC, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
@@ -9,11 +9,16 @@ import { fetchPizzas, selectPizzaData } from '../../redux/slices/pizzaSlice';
 
 import './PizzaList.scss';
 
-export const PizzaList = ({ categoryId, currentPage }) => {
+interface PizzaListProps {
+  categoryId: number
+  currentPage: number
+}
+
+export const PizzaList: FC<PizzaListProps> = ({ categoryId, currentPage }) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { sort, searchValue } = useSelector(selectFilter);
   const { items, status } = useSelector(selectPizzaData);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const isSearch = useRef(false);
   const isMounted = useRef(false);
@@ -25,6 +30,7 @@ export const PizzaList = ({ categoryId, currentPage }) => {
     const search = searchValue ? `search=${searchValue}` : '';
 
     dispatch(
+      // @ts-ignore
       fetchPizzas({
         category,
         sortBy,
@@ -86,7 +92,7 @@ export const PizzaList = ({ categoryId, currentPage }) => {
     <Skeleton key={index} />
   ));
 
-  const pizzas = items.map((obj) => <PizzaListItem key={obj.id} {...obj} />);
+  const pizzas = items.map((obj: any) => <PizzaListItem key={obj.id} {...obj} />);
 
   return (
     <main className="main">

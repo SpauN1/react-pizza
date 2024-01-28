@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -6,9 +6,21 @@ import { addItem, selectCartItemByID } from '../../redux/slices/cartSlice';
 
 import './PizzaListItem.scss';
 
+interface PizzaListItemProps {
+  title: string;
+  price: number;
+  imageUrl: string;
+  types: number[];
+  sizes: number[];
+  id: string;
+  rating: number;
+}
+
 const typeDough = ['тонкое', 'традиционное'];
 
-export const PizzaListItem = ({ title, price, imageUrl, types, sizes, id }) => {
+export const PizzaListItem: FC<PizzaListItemProps> = (props) => {
+  const { title, price, imageUrl, types, sizes, id } = props;
+
   const dispatch = useDispatch();
   const cartItem = useSelector(selectCartItemByID(id));
 

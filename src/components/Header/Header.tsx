@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -10,10 +10,10 @@ import { Search } from "../Search/Search";
 
 import './Header.scss';
 
-export const Header = () => {
+export const Header: FC = () => {
   const { totalPrice, items } = useSelector(selectCart);
 
-  const totalCount = items.reduce((sum, item) => sum + item.count, 0);
+  const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0);
 
   return (
     <header className="header">
@@ -31,7 +31,7 @@ export const Header = () => {
         </Link>
         <Search />
         <div className="header__basket">
-          <Link to="/cart" className="button button__header" href="#">
+          <Link to="/cart" className="button button__header">
             <span>{totalPrice} ₽</span>
             <div className="button__header-delimiter"></div>
             <img src={basketWhite} alt="иконка корзины" />

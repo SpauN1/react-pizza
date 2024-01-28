@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 
 import cartEmptyImg from '../../assets/img/cart-empty.svg';
 
 import './CartEmpty.scss';
 
-export const CartEmpty = () => {
+export const CartEmpty: FC = () => {
   return (
     <div className="cart-empty">
       <div className="cart-empty__body">

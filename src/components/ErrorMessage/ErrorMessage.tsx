@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import img from '../../assets/error.gif';
 
-export const ErrorMessage = () => {
+export const ErrorMessage: FC = () => {
   return (
     <div style={{ padding: '100px' }}>
       <h2

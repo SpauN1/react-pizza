@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import './Categories.scss';
 
-export const Categories = ({ categoryId, onChangeCategory }) => {
+interface CategoriesProps {
+  categoryId: number;
+  onChangeCategory: any;
+}
+
+export const Categories: FC<CategoriesProps> = ({
+  categoryId,
+  onChangeCategory,
+}) => {
   const categories = [
     'Все',
     'Мясные',
