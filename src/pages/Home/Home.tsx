@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Categories, Pagination, PizzaList, Sort } from '../../components';
@@ -8,16 +8,16 @@ import {
   setCurrentPage,
 } from '../../redux/slices/filterSlice';
 
-export const Home = () => {
+export const Home: FC = () => {
   const dispatch = useDispatch();
   const { categoryId, currentPage } = useSelector(selectFilter);
 
-  const onChangeCategory = (id) => {
+  const onChangeCategory = (id: number) => {
     dispatch(setCategoryId(id));
   };
 
-  const onChangePage = (number) => {
-    dispatch(setCurrentPage(number));
+  const onChangePage = (page: number) => {
+    dispatch(setCurrentPage(page));
   };
 
   return (

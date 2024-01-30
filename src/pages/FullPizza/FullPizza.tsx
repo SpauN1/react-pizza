@@ -1,13 +1,19 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios';
 
 import './FullPizza.scss';
 
-export const FullPizza = () => {
+export const FullPizza: FC = () => {
+  const [pizza, setPizza] = useState<{
+    imageUrl: string;
+    title: string;
+    description: string;
+    price: number;
+  }>();
+
   const navigate = useNavigate();
   const { id } = useParams();
-  const [pizza, setPizza] = useState();
 
   useEffect(() => {
     async function fetchPizza() {

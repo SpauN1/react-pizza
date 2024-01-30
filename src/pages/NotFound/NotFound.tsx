@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { ErrorMessage } from '../../components';
 
-export const NotFound = () => {
+export const NotFound: FC = () => {
   return (
     <>
       <ErrorMessage />

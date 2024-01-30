@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { CartEmpty } from "./components";
-import MainLayout from './layouts/MainLayout';
+import { CartEmpty } from './components';
+import { MainLayout } from './layouts/MainLayout';
 import { Cart, FullPizza, Home, NotFound } from './pages';
 
 import '../src/style/style.scss';

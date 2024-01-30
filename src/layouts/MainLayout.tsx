@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { Header } from '../components';
 
-function MainLayout() {
+export const MainLayout: FC = () => {
   return (
     <div className="wrapper">
       <Header />
@@ -12,6 +12,4 @@ function MainLayout() {
       </div>
     </div>
   );
-}
-
-export default MainLayout;
+};
