@@ -5,7 +5,7 @@ import './Pagination.scss';
 
 interface PaginationProps {
   currentPage: number;
-  onChangePage: any;
+  onChangePage: (page: number) => void;
 }
 
 export const Pagination: FC<PaginationProps> = ({

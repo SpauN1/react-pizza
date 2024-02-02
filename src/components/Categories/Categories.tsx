@@ -4,22 +4,22 @@ import './Categories.scss';
 
 interface CategoriesProps {
   categoryId: number;
-  onChangeCategory: any;
+  onChangeCategory: (i: number) => void;
 }
+
+const categories = [
+  'Все',
+  'Мясные',
+  'Вегетарианская',
+  'Гриль',
+  'Острые',
+  'Закрытые',
+];
 
 export const Categories: FC<CategoriesProps> = ({
   categoryId,
   onChangeCategory,
 }) => {
-  const categories = [
-    'Все',
-    'Мясные',
-    'Вегетарианская',
-    'Гриль',
-    'Острые',
-    'Закрытые',
-  ];
-
   return (
     <nav className="categories">
       <ul className="categories__item">
