@@ -2,7 +2,11 @@ import React, { FC, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { addItem, selectCartItemByID } from '../../redux/slices/cartSlice';
+import {
+  CartItem,
+  addItem,
+  selectCartItemByID,
+} from '../../redux/slices/cartSlice';
 
 import './PizzaListItem.scss';
 
@@ -30,13 +34,14 @@ export const PizzaListItem: FC<PizzaListItemProps> = (props) => {
   const addedCount = cartItem ? cartItem.count : 0;
 
   const onClickAdd = () => {
-    const item = {
+    const item: CartItem = {
       id,
       title,
       price,
       imageUrl,
       dough: typeDough[activeDough],
       size: sizes[activeSize],
+      count: 0,
     };
     dispatch(addItem(item));
   };
