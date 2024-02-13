@@ -1,19 +1,6 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { RootState } from '../store';
-import { CartItem } from './cartSlice';
-
-export const fetchPizzas = createAsyncThunk<CartItem[], Record<string, string>>(
-  'pizza/fetchPizzasStatus',
-  async (params) => {
-    const { category, sortBy, order, search, currentPage } = params;
-
-    const { data } = await axios.get<CartItem[]>(
-      `https://65468388fe036a2fa955ca61.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortBy}&order=${order}&${search}`
-    );
-    return data;
-  }
-);
 
 interface PizzaItem {
   title: string;
@@ -35,27 +22,39 @@ const initialState: PizzaSliceState = {
   status: 'loading', // loading | success | error
 };
 
+export const fetchPizzas = createAsyncThunk<
+  PizzaItem[],
+  Record<string, string>
+>('pizza/fetchPizzasStatus', async (params) => {
+  const { category, sortBy, order, search, currentPage } = params;
+
+  const { data } = await axios.get<PizzaItem[]>(
+    `https://65468388fe036a2fa955ca61.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortBy}&order=${order}&${search}`
+  );
+  return data;
+});
+
 export const pizzaSlice = createSlice({
   name: 'pizza',
   initialState,
   reducers: {
-    setItems(state, actions) {
+    setItems(state, actions: PayloadAction<PizzaItem[]>) {
       state.items = actions.payload;
     },
   },
-  extraReducers: {
-    [fetchPizzas.pending]: (state) => {
+  extraReducers: (builder) => {
+    builder.addCase(fetchPizzas.pending, (state, action) => {
       state.status = 'loading';
       state.items = [];
-    },
-    [fetchPizzas.fulfilled]: (state, action) => {
+    });
+    builder.addCase(fetchPizzas.fulfilled, (state, action) => {
       state.items = action.payload;
       state.status = 'success';
-    },
-    [fetchPizzas.rejected]: (state) => {
+    });
+    builder.addCase(fetchPizzas.rejected, (state, action) => {
       state.status = 'error';
       state.items = [];
-    },
+    });
   },
 });
 
