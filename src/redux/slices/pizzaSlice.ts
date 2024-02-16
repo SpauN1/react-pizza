@@ -12,14 +12,20 @@ interface PizzaItem {
   rating: number;
 }
 
+export enum Status {
+  LOADING = 'loading',
+  SUCCESS = 'success',
+  ERROR = 'error',
+}
+
 interface PizzaSliceState {
   items: PizzaItem[];
-  status: 'loading' | 'success' | 'error';
+  status: Status;
 }
 
 const initialState: PizzaSliceState = {
   items: [],
-  status: 'loading', // loading | success | error
+  status: Status.LOADING, // loading | success | error
 };
 
 export const fetchPizzas = createAsyncThunk<
@@ -44,15 +50,15 @@ export const pizzaSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchPizzas.pending, (state, action) => {
-      state.status = 'loading';
+      state.status = Status.LOADING;
       state.items = [];
     });
     builder.addCase(fetchPizzas.fulfilled, (state, action) => {
       state.items = action.payload;
-      state.status = 'success';
+      state.status = Status.SUCCESS;
     });
     builder.addCase(fetchPizzas.rejected, (state, action) => {
-      state.status = 'error';
+      state.status = Status.ERROR;
       state.items = [];
     });
   },
