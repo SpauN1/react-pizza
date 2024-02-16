@@ -8,4 +8,4 @@ export * from './PizzaList/PizzaList';
 export * from './PizzaListItem/PizzaListItem';
 export * from './Search/Search';
 export * from './Skeleton/Skeleton';
-export * from './Sort/Sort';
+export * from './SortPopup/SortPopup';

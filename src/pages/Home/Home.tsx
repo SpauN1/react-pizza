@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Categories, Pagination, PizzaList, Sort } from '../../components';
+import { Categories, Pagination, PizzaList, SortPopup } from '../../components';
 import {
   selectFilter,
   setCategoryId,
@@ -27,7 +27,7 @@ export const Home: FC = () => {
           categoryId={categoryId}
           onChangeCategory={onChangeCategory}
         />
-        <Sort />
+        <SortPopup />
       </div>
       <PizzaList currentPage={currentPage} categoryId={categoryId} />
       <Pagination currentPage={currentPage} onChangePage={onChangePage} />
