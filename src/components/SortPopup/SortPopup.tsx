@@ -49,7 +49,10 @@ export const SortPopup: FC = () => {
 
   return (
     <div ref={sortRef} className="sort">
-      <div onClick={() => setOpenPopup(!openPopup)} className="sort__label">
+      <div
+        onClick={() => setOpenPopup(!openPopup)}
+        className={openPopup ? 'sort__label' : 'sort__label sort__arrow'}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="10"

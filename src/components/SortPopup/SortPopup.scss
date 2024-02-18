@@ -8,6 +8,12 @@
     display: flex;
     align-items: center;
   }
+
+  &__arrow {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
   svg {
     text-align: center;
     align-items: center;
