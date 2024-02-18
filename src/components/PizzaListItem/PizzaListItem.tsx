@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import {
-  CartItem,
+  ICartItem,
   addItem,
   selectCartItemByID,
 } from '../../redux/slices/cartSlice';
@@ -34,7 +34,7 @@ export const PizzaListItem: FC<PizzaListItemProps> = (props) => {
   const addedCount = cartItem ? cartItem.count : 0;
 
   const onClickAdd = () => {
-    const item: CartItem = {
+    const item: ICartItem = {
       id,
       title,
       price,

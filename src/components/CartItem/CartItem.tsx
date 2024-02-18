@@ -1,7 +1,12 @@
 import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { addItem, minusItem, removeItem } from '../../redux/slices/cartSlice';
+import {
+  ICartItem,
+  addItem,
+  minusItem,
+  removeItem,
+} from '../../redux/slices/cartSlice';
 
 import './CartItem.scss';
 
@@ -24,7 +29,7 @@ export const CartItem: FC<CartItemProps> = (props) => {
     dispatch(
       addItem({
         id,
-      })
+      } as ICartItem)
     );
   };
 

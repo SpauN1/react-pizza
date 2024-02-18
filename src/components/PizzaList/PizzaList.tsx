@@ -5,13 +5,17 @@ import { useNavigate } from 'react-router-dom';
 
 import { PizzaListItem, Skeleton, sortList } from '../index';
 import { selectFilter, setFilters } from '../../redux/slices/filterSlice';
-import { fetchPizzas, selectPizzaData } from '../../redux/slices/pizzaSlice';
+import {
+  SearchPizzaParams,
+  fetchPizzas,
+  selectPizzaData,
+} from '../../redux/slices/pizzaSlice';
 
 import './PizzaList.scss';
 
 interface PizzaListProps {
-  categoryId: number
-  currentPage: number
+  categoryId: number;
+  currentPage: number;
 }
 
 export const PizzaList: FC<PizzaListProps> = ({ categoryId, currentPage }) => {
@@ -36,7 +40,7 @@ export const PizzaList: FC<PizzaListProps> = ({ categoryId, currentPage }) => {
         sortBy,
         order,
         search,
-        currentPage,
+        currentPage: String(currentPage),
       })
     );
   };
@@ -60,16 +64,18 @@ export const PizzaList: FC<PizzaListProps> = ({ categoryId, currentPage }) => {
   // Если был первый рендер, то проверяем URl-параметры и сохраняем в ридаксе
   useEffect(() => {
     if (window.location.search) {
-      const params = qs.parse(window.location.search.substring(1));
+      const params = qs.parse(
+        window.location.search.substring(1)
+      ) as unknown as SearchPizzaParams;
 
-      const sort = sortList.find(
-        (obj) => obj.sortProperty === params.sortProperty
-      );
+      const sort = sortList.find((obj) => obj.sortProperty === params.sortBy);
 
       dispatch(
         setFilters({
-          ...params,
-          sort,
+          searchValue: params.search,
+          categoryId: Number(params.category),
+          currentPage: Number(params.currentPage),
+          sort: sort || sortList[0],
         })
       );
 
@@ -92,7 +98,9 @@ export const PizzaList: FC<PizzaListProps> = ({ categoryId, currentPage }) => {
     <Skeleton key={index} />
   ));
 
-  const pizzas = items.map((obj: any) => <PizzaListItem key={obj.id} {...obj} />);
+  const pizzas = items.map((obj: any) => (
+    <PizzaListItem key={obj.id} {...obj} />
+  ));
 
   return (
     <main className="main">
