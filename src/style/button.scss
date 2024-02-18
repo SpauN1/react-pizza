@@ -135,6 +135,10 @@
         color: $whiteColor;
       }
     }
+
+    &:active {
+      transform: translateY(2px);
+    }
   }
 
   &__full-pizza {
