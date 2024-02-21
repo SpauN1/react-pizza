@@ -1,9 +1,10 @@
 import React, { FC, useEffect, useRef } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
 
 import { PizzaListItem, Skeleton, sortList } from '../index';
+import { useAppDispatch } from '../../redux/store';
 import { selectFilter, setFilters } from '../../redux/slices/filterSlice';
 import {
   SearchPizzaParams,
@@ -20,7 +21,7 @@ interface PizzaListProps {
 
 export const PizzaList: FC<PizzaListProps> = ({ categoryId, currentPage }) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { sort, searchValue } = useSelector(selectFilter);
   const { items, status } = useSelector(selectPizzaData);
 
@@ -34,7 +35,6 @@ export const PizzaList: FC<PizzaListProps> = ({ categoryId, currentPage }) => {
     const search = searchValue ? `search=${searchValue}` : '';
 
     dispatch(
-      // @ts-ignore
       fetchPizzas({
         category,
         sortBy,
