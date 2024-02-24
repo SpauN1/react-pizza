@@ -1,19 +1,23 @@
 import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import basketWhite from '../../assets/img/basket-white.svg';
 import logo from '../../assets/img/logo.jpg';
 
 import { selectCart } from '../../redux/slices/cartSlice';
-import { Search } from "../Search/Search";
+import { Search } from '../index';
 
 import './Header.scss';
 
 export const Header: FC = () => {
   const { totalPrice, items } = useSelector(selectCart);
+  const location = useLocation();
 
-  const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0);
+  const totalCount = items.reduce(
+    (sum: number, item: any) => sum + item.count,
+    0
+  );
 
   return (
     <header className="header">
@@ -29,7 +33,7 @@ export const Header: FC = () => {
             </div>
           </div>
         </Link>
-        <Search />
+        {location.pathname !== '/cart' && <Search />}
         <div className="header__basket">
           <Link to="/cart" className="button button__header">
             <span>{totalPrice} ₽</span>
