@@ -58,6 +58,7 @@ export const CartItem: FC<CartItemProps> = (props) => {
         <div className="cart__item-details">
           <div className="cart__item-count">
             <button
+              disabled={count === 1}
               onClick={onClickMinus}
               className="button-count-minus button__cart-circle"
             >

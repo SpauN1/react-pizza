@@ -165,6 +165,20 @@
       display: inline-block;
       margin-bottom: 2px;
     }
+
+    &:disabled {
+      opacity: 0.4;
+      transform: none;
+      border-color: $grayColor;
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      span {
+        color: $grayColor;
+      }
+    }
   }
 
   &-count-plus {
