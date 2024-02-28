@@ -16,7 +16,6 @@
   &-preview {
     display: flex;
     align-items: center;
-    width: 60%;
     cursor: pointer;
 
     &:hover {
@@ -60,7 +59,7 @@
   }
 
   &-count {
-    width: 28%;
+    width: 92px;
     display: flex;
     align-items: center;
     justify-content: space-between;

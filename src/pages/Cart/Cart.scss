@@ -28,6 +28,7 @@
   }
 
   &__clear {
+    cursor: pointer;
     display: flex;
     align-items: center;
     color: $grayColor;
