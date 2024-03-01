@@ -1,12 +1,8 @@
 import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 
-import {
-  ICartItem,
-  addItem,
-  minusItem,
-  removeItem,
-} from '../../redux/slices/cartSlice';
+import { addItem, minusItem, removeItem } from '../../redux/cart/slice';
+import { ICartItem } from '../../redux/cart/types';
 
 import './CartItem.scss';
 

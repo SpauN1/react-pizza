@@ -2,11 +2,9 @@ import React, { FC, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import {
-  ICartItem,
-  addItem,
-  selectCartItemByID,
-} from '../../redux/slices/cartSlice';
+import { selectCartItemByID } from '../../redux/cart/selectors';
+import { ICartItem } from '../../redux/cart/types';
+import { addItem } from '../../redux/cart/slice';
 
 import './PizzaListItem.scss';
 

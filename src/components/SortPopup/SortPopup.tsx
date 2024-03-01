@@ -1,11 +1,9 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import {
-  SortPropertyEnum,
-  selectSort,
-  setSortType,
-} from '../../redux/slices/filterSlice';
+import { SortPropertyEnum } from '../../redux/filter/types';
+import { selectSort } from '../../redux/filter/selectors';
+import { setSortType } from '../../redux/filter/slice';
 
 import './SortPopup.scss';
 

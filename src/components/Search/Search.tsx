@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import search from '../../assets/img/search.svg';
 import clearIcon from '../../assets/img/clear-icon.svg';
 
-import { setSearchValue } from '../../redux/slices/filterSlice';
+import { setSearchValue } from '../../redux/filter/slice';
 
 import './Search.scss';
 

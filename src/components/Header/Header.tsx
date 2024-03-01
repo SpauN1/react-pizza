@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import basketWhite from '../../assets/img/basket-white.svg';
 import logo from '../../assets/img/logo.jpg';
 
-import { selectCart } from '../../redux/slices/cartSlice';
+import { selectCart } from '../../redux/cart/selectors';
 import { Search } from '../index';
 
 import './Header.scss';

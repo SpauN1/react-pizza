@@ -5,12 +5,11 @@ import { useNavigate } from 'react-router-dom';
 
 import { PizzaListItem, Skeleton, sortList } from '../index';
 import { useAppDispatch } from '../../redux/store';
-import { selectFilter, setFilters } from '../../redux/slices/filterSlice';
-import {
-  SearchPizzaParams,
-  fetchPizzas,
-  selectPizzaData,
-} from '../../redux/slices/pizzaSlice';
+import { selectFilter } from '../../redux/filter/selectors';
+import { selectPizzaData } from '../../redux/pizza/selectors';
+import { fetchPizzas } from '../../redux/pizza/asyncActions';
+import { SearchPizzaParams } from '../../redux/pizza/types';
+import { setFilters } from '../../redux/filter/slice';
 
 import './PizzaList.scss';
 

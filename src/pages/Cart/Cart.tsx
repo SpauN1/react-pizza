@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import basketBlack from '../../assets/img/basket-black.svg';
 
 import { CartEmpty, CartItem } from '../../components';
-import { clearItems, selectCart } from '../../redux/slices/cartSlice';
+import { selectCart } from '../../redux/cart/selectors';
+import { clearItems } from '../../redux/cart/slice';
 
 import './Cart.scss';
 
