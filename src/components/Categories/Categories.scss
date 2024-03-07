@@ -1,10 +1,29 @@
 @import '../../style//variables.scss';
 
 .categories {
+  margin-right: 5px;
+
+  @media (max-width: 1299px) {
+    margin-bottom: 25px;
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 15px;
+  }
+
   &__item {
     display: flex;
     gap: 8px;
     margin-right: 10px;
+
+    @media (max-width: 1299px) {
+      margin-right: 0px;
+    }
+
+    @media (max-width: 1024px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
     li {
       cursor: pointer;
@@ -15,6 +34,19 @@
       font-weight: 700;
       padding: 15px 30px;
       transition: all 0.3s ease-in;
+
+      @media (max-width: 1299px) {
+        padding: 12px 24px;
+      }
+
+      @media (max-width: 767px) {
+        padding: 12px 18px;
+      }
+
+      @media (max-width: 575px) {
+        padding: 10px 16px;
+        font-size: 14px;
+      }
 
       &:hover {
         color: $whiteColor;

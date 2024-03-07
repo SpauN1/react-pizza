@@ -11,8 +11,13 @@
   }
 
   @media (max-width: 1024px) {
+    margin-top: 20px;
     width: 100%;
     order: 3;
+  }
+
+  @media (max-width: 479px) {
+    margin-top: 0px;
   }
 
   &__icon {
