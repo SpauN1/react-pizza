@@ -1,27 +1,14 @@
 import React, { FC } from 'react';
 
-import img from '../../assets/error.gif';
+import errorGif from '../../assets/error.gif';
+
+import './ErrorMessage.scss';
 
 export const ErrorMessage: FC = () => {
   return (
-    <div style={{ padding: '100px' }}>
-      <h2
-        style={{ textAlign: 'center', marginBottom: '15px', fontSize: '20px' }}
-        className="not-found"
-      >
-        Ничего не найдено:
-      </h2>
-      <img
-        style={{
-          display: 'block',
-          width: '250px',
-          height: '250px',
-          objectFit: 'contain',
-          margin: '0 auto',
-        }}
-        src={img}
-        alt="Error"
-      />
+    <div className="not-found" style={{}}>
+      <h2 className="not-found__title">Ничего не найдено:</h2>
+      <img className="not-found__img" src={errorGif} alt="Error" />
     </div>
   );
 };

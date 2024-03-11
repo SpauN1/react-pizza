@@ -1,0 +1,23 @@
+.not-found {
+  padding: 100px;
+
+  @media (max-width: 575px) {
+    padding: 100px 60px;
+  }
+
+  @media (max-width: 479px) {
+    padding: 100px 0px;
+  }
+}
+.not-found__title {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+.not-found__img {
+  object-fit: contain;
+  display: block;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+}
