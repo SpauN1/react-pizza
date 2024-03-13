@@ -51,6 +51,10 @@
       color: $primaryColor;
       font-size: 16px;
       margin-right: 8px;
+
+      @media (max-width: 767px) {
+        font-size: 14px;
+      }
     }
 
     &-icon {

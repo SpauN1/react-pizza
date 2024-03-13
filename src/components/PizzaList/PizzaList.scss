@@ -6,6 +6,15 @@
     font-size: 32px;
     letter-spacing: 0.32px;
     margin-bottom: 35px;
+
+    @media (max-width: 767px) {
+      font-size: 28px;
+    }
+
+    @media (max-width: 575px) {
+      margin-bottom: 20px;
+      margin-left: 20px;
+    }
   }
 
   &__product {
@@ -14,6 +23,20 @@
     gap: 55px 25px;
     justify-content: space-around;
     margin-bottom: 50px;
+
+    @media (max-width: 1299px) {
+      grid-template-columns: repeat(auto-fill, minmax(170px, 275px));
+      gap: 45px 20px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 575px) {
+      margin-bottom: 25px;
+    }
+
+    @media (max-width: 479px) {
+      margin-bottom: 12px;
+    }
   }
 
   &__error-info {

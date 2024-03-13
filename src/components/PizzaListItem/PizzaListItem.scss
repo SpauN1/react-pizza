@@ -17,6 +17,11 @@
     transition: all 0.2s ease;
     cursor: pointer;
 
+    @media (max-width: 767px) {
+      width: 240px;
+      height: 240px;
+    }
+
     &:hover {
       transform: scale(1.1);
     }
@@ -29,6 +34,10 @@
     font-weight: 800;
     margin-bottom: 22px;
     text-align: center;
+
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
   }
 
   &__params {
@@ -78,5 +87,9 @@
     color: $blackColor;
     font-size: 22px;
     letter-spacing: 0.33px;
+
+    @media (max-width: 767px) {
+      font-size: 20px;
+    }
   }
 }
