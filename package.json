@@ -14,7 +14,6 @@
     "@types/react-dom": "^18.2.18",
     "axios": "^1.6.2",
     "lodash.debounce": "^4.0.8",
-    "qs": "^6.11.2",
     "react": "^18.2.0",
     "react-content-loader": "^6.2.1",
     "react-dom": "^18.2.0",
@@ -25,6 +24,9 @@
     "sass": "^1.68.0",
     "typescript": "^5.3.3",
     "web-vitals": "^2.1.4"
+  },
+  "overrides": {
+    "typescript": "^5.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
