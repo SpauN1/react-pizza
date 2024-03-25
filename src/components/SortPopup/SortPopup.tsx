@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { SortPropertyEnum } from '../../redux/filter/types';
@@ -18,7 +18,7 @@ export const sortList: SortItem[] = [
   { name: 'по цене (DESC)', sortProperty: SortPropertyEnum.PRICE_DESC },
   { name: 'по цене (ASC)', sortProperty: SortPropertyEnum.PRICE_ASC },
   { name: 'по алфавиту (DESC)', sortProperty: SortPropertyEnum.TITLE_DESC },
-  { name: 'по алфавиту (ASC)', sortProperty: SortPropertyEnum.TITLE_ASC },
+  { name: 'по алфавиту (ASC)', sortProperty: SortPropertyEnum.TITLE_ASC }
 ];
 
 export const SortPopup: FC = () => {

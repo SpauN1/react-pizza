@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { addItem, minusItem, removeItem } from '../../redux/cart/slice';
@@ -24,7 +24,7 @@ export const CartItem: FC<CartItemProps> = (props) => {
   const onClickPlus = () => {
     dispatch(
       addItem({
-        id,
+        id
       } as ICartItem)
     );
   };

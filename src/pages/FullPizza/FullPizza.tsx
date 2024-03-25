@@ -1,10 +1,10 @@
-import React, { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import './FullPizza.scss';
 
-export const FullPizza: FC = () => {
+const FullPizza: FC = () => {
   const [pizza, setPizza] = useState<{
     imageUrl: string;
     title: string;
@@ -51,3 +51,5 @@ export const FullPizza: FC = () => {
     </div>
   );
 };
+
+export default FullPizza;

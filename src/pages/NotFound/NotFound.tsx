@@ -1,11 +1,13 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 import { ErrorMessage } from '../../components';
 
-export const NotFound: FC = () => {
+const NotFound: FC = () => {
   return (
     <>
       <ErrorMessage />
     </>
   );
 };
+
+export default NotFound;

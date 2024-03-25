@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import ReactPaginate from 'react-paginate';
 
 import './Pagination.scss';
@@ -10,7 +10,7 @@ interface PaginationProps {
 
 export const Pagination: FC<PaginationProps> = ({
   currentPage,
-  onChangePage,
+  onChangePage
 }) => {
   return (
     <section className="pagination">

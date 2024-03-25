@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Categories, Pagination, PizzaList, SortPopup } from '../../components';
 import { selectFilter } from '../../redux/filter/selectors';
 import { setCategoryId, setCurrentPage } from '../../redux/filter/slice';
 
-export const Home: FC = () => {
+const Home: FC = () => {
   const dispatch = useDispatch();
   const { categoryId, currentPage } = useSelector(selectFilter);
 
@@ -31,3 +31,5 @@ export const Home: FC = () => {
     </>
   );
 };
+
+export default Home;

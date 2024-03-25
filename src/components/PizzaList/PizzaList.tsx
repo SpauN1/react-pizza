@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 import { PizzaListItem, Skeleton } from '../index';
@@ -32,7 +32,7 @@ export const PizzaList: FC<PizzaListProps> = ({ categoryId, currentPage }) => {
         sortBy,
         order,
         search,
-        currentPage: String(currentPage),
+        currentPage: String(currentPage)
       })
     );
   };

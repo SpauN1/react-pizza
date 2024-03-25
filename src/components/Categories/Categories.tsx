@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 import './Categories.scss';
 
@@ -13,12 +13,12 @@ const categories = [
   'Вегетарианская',
   'Гриль',
   'Острые',
-  'Закрытые',
+  'Закрытые'
 ];
 
 export const Categories: FC<CategoriesProps> = ({
   categoryId,
-  onChangeCategory,
+  onChangeCategory
 }) => {
   return (
     <nav className="categories">

@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -39,7 +39,7 @@ export const PizzaListItem: FC<PizzaListItemProps> = (props) => {
       imageUrl,
       dough: typeDough[activeDough],
       size: sizes[activeSize],
-      count: 0,
+      count: 0
     };
     dispatch(addItem(item));
   };
