@@ -164,14 +164,22 @@
     background: $darkGrayColor;
     width: 80%;
     margin: 0px auto;
-    height: 47px;
+    padding: 14px 16px;
     transition: 0.3s ease-in-out;
+
+    @media (max-width: 767px) {
+      margin-bottom: 10px;
+    }
 
     span {
       margin: 0px auto;
       color: $whiteColor;
       font-style: normal;
       letter-spacing: 0.24px;
+
+      @media (max-width: 767px) {
+        font-size: 14px;
+      }
     }
 
     &:hover {
