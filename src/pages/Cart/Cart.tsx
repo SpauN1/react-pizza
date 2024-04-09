@@ -90,7 +90,7 @@ const Cart = () => {
             </p>
           </div>
           <div className="cart__bottom-buttons">
-            <Link to="/" className="button button-go-back">
+            <Link to="/" className="button button__cart button__cart-go-back">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="8"
@@ -108,7 +108,7 @@ const Cart = () => {
               </svg>
               <span>Вернуться назад</span>
             </Link>
-            <button className="button button-pay">
+            <button className="button button__cart button__cart-pay">
               <span>Оплатить сейчас</span>
             </button>
           </div>
