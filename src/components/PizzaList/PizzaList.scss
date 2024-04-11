@@ -7,6 +7,10 @@
     letter-spacing: 0.32px;
     margin-bottom: 35px;
 
+    @media (max-width: 1024px) {
+      font-size: 32px;
+    }
+
     @media (max-width: 767px) {
       font-size: 28px;
     }
