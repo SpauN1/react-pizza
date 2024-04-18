@@ -163,6 +163,11 @@
       width: 29px;
       height: 29px;
     }
+
+    @media (max-width: 479px) {
+      width: 26px;
+      height: 26px;
+    }
   }
 
   &__full-pizza {
