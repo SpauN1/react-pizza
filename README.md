@@ -1,3 +1,6 @@
+## 👀 [Ссылка на проект](https://react-pizza-eq.vercel.app/)
+
+
 ## 🛠 Stack
 
 - **ReactJS 18**
