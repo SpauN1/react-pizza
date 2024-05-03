@@ -1,5 +1,6 @@
-## 👀 [Ссылка на проект](https://react-pizza-eq.vercel.app/)
+![Пример изображения](https://raw.githubusercontent.com/SpauN1/react-pizza/master/public/preview.png)
 
+## 👀 [Ссылка на проект](https://react-pizza-eq.vercel.app/)
 
 ## 🛠 Stack
 
