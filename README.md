@@ -4,14 +4,14 @@
 
 ## 🛠 Stack
 
-- **ReactJS 18**
+- **React 18**
 - **TypeScript**
 - **Redux Toolkit**
 - **React Router v6**
 - **Axios**
 - **Prettier**
-- React Content Loader
-- React Pagination
+- React Content Loader - (skeleton)
+- React Pagination - (pagination)
 - Lodash.Debounce
 - Code Splitting
 
