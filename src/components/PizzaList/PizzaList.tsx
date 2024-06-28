@@ -32,7 +32,7 @@ export const PizzaList: FC<PizzaListProps> = ({ categoryId, currentPage }) => {
         sortBy,
         order,
         search,
-        currentPage: String(currentPage)
+        currentPage: String(currentPage),
       })
     );
   };

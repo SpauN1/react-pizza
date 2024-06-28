@@ -18,7 +18,7 @@ export const sortList: SortItem[] = [
   { name: 'по цене (DESC)', sortProperty: SortPropertyEnum.PRICE_DESC },
   { name: 'по цене (ASC)', sortProperty: SortPropertyEnum.PRICE_ASC },
   { name: 'по алфавиту (DESC)', sortProperty: SortPropertyEnum.TITLE_DESC },
-  { name: 'по алфавиту (ASC)', sortProperty: SortPropertyEnum.TITLE_ASC }
+  { name: 'по алфавиту (ASC)', sortProperty: SortPropertyEnum.TITLE_ASC },
 ];
 
 export const SortPopup: FC = () => {

@@ -24,7 +24,7 @@ export const CartItem: FC<CartItemProps> = (props) => {
   const onClickPlus = () => {
     dispatch(
       addItem({
-        id
+        id,
       } as ICartItem)
     );
   };

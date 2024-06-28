@@ -10,7 +10,7 @@ interface PaginationProps {
 
 export const Pagination: FC<PaginationProps> = ({
   currentPage,
-  onChangePage
+  onChangePage,
 }) => {
   return (
     <section className="pagination">

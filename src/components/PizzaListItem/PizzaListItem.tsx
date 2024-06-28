@@ -39,7 +39,7 @@ export const PizzaListItem: FC<PizzaListItemProps> = (props) => {
       imageUrl,
       dough: typeDough[activeDough],
       size: sizes[activeSize],
-      count: 0
+      count: 0,
     };
     dispatch(addItem(item));
   };

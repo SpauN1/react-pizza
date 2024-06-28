@@ -13,12 +13,12 @@ const categories = [
   'Вегетарианская',
   'Гриль',
   'Острые',
-  'Закрытые'
+  'Закрытые',
 ];
 
 export const Categories: FC<CategoriesProps> = ({
   categoryId,
-  onChangeCategory
+  onChangeCategory,
 }) => {
   return (
     <nav className="categories">
