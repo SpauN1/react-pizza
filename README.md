@@ -16,6 +16,15 @@
 - Code Splitting
 
 ## ⚙️ Setup project
-1:  Клонировать этот репозиторий ```https://github.com/SpauN1/react-pizza.git```  
-2:  Установить все зависимости ```npm install```  
-3:  Запустить проект командой ```npm start``` 
+> **Node.js version:** **20.11.0**
+```bash
+git clone https://github.com/SpauN1/react-pizza.git
+```
+
+```bash
+npm install
+```
+
+```bash
+npm run dev
+```
